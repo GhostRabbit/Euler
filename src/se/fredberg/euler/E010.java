@@ -1,6 +1,5 @@
 package se.fredberg.euler;
 
-
 public class E010 {
 
     /*
@@ -10,17 +9,14 @@ public class E010 {
      */
 
     public static void main(String[] args) {
-        int[] numbers = new int[2000000];
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = i;
-        }
+        byte[] numbers = new byte[2000001];
         long sum = 0;
         for (int x = 2; x < numbers.length; x++) {
-            if (numbers[x] != 0) {
+            if (numbers[x] == 0) {
                 sum += x;
                 int y = x;
                 while (y < numbers.length) {
-                    numbers[y] = 0;
+                    numbers[y] = 1;
                     y += x;
                 }
             }

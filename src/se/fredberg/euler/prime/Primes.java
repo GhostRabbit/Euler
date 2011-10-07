@@ -25,6 +25,7 @@ public class Primes {
         return null;
     }
     
+
     public static int getPrimeNumber(int number) {
         Generator primes = new ArrayedPrimesGenerator();
         int c = 0;

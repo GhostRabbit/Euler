@@ -3,13 +3,13 @@ package se.fredberg.euler;
 import java.util.LinkedList;
 import java.util.List;
 
-import se.fredberg.euler.util.PalindromeMatcher;
+import se.fredberg.euler.matcher.PalindromeMatcher;
 
 public class E004 {
 
     /*
      * A palindromic number reads the same both ways. The largest palindrome
-     * made from the product of two 2-digit numbers is 9009 = 91 99.
+     * made from the product of two 2-digit numbers is 9009 = 91 x 99.
      * 
      * Find the largest palindrome made from the product of two 3-digit numbers.
      */
@@ -17,13 +17,15 @@ public class E004 {
         E004 e004 = new E004();
         List<Integer> products = e004.products(100, 999);
         List<Integer> palindromes = e004.findPalindromes(products);
-        System.out.println(max(palindromes));;
+        System.out.println(max(palindromes));
+        ;
     }
 
     static Integer max(List<Integer> palindromes) {
         Integer max = Integer.MIN_VALUE;
         for (Integer i : palindromes) {
-            if (max < i) max = i;
+            if (max < i)
+                max = i;
         }
         return max;
     }

@@ -17,7 +17,6 @@ public class E004Test {
     @Test
     public void findPalaindormes() {
         List<Integer> candidates = new E004().products(91, 99);
-        System.out.println(new E004().findPalindromes(candidates));
         assertThat(new E004().findPalindromes(candidates)).isNotEmpty();
     }
     
