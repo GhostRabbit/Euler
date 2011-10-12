@@ -21,5 +21,4 @@ public class PrimeFactors {
         }
         return number;
     }
-
 }

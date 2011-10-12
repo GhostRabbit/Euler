@@ -1,0 +1,1 @@
+Setup maven magic for external libraries.

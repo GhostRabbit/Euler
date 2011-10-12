@@ -18,14 +18,14 @@ public class E004 {
         List<Integer> products = e004.products(100, 999);
         List<Integer> palindromes = e004.findPalindromes(products);
         System.out.println(max(palindromes));
-        ;
     }
 
     static Integer max(List<Integer> palindromes) {
         Integer max = Integer.MIN_VALUE;
         for (Integer i : palindromes) {
-            if (max < i)
+            if (max < i) {
                 max = i;
+            }
         }
         return max;
     }

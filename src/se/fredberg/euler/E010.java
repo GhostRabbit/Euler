@@ -8,16 +8,23 @@ public class E010 {
      * Find the sum of all the primes below two million.
      */
 
+    /*
+     * Breakpoint and x*x are tricks taken from the paper linked form problem.
+     */
+    
     public static void main(String[] args) {
         byte[] numbers = new byte[2000001];
         long sum = 0;
+        int breakpoint = (int) Math.sqrt(20000000);
         for (int x = 2; x < numbers.length; x++) {
             if (numbers[x] == 0) {
                 sum += x;
-                int y = x;
-                while (y < numbers.length) {
-                    numbers[y] = 1;
-                    y += x;
+                if (x < breakpoint) {
+                    int y = x * x;
+                    while (y < numbers.length) {
+                        numbers[y] = 1;
+                        y += x;
+                    }
                 }
             }
         }

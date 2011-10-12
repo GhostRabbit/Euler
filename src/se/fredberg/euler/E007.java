@@ -10,9 +10,9 @@ public class E007 {
      * 
      * What is the 10 001st prime number?
      */
-    
+
     public static void main(String[] args) {
         System.out.println(Primes.getPrimeNumber(10001));
     }
-   
+
 }
