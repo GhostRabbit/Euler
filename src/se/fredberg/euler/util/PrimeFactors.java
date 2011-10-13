@@ -7,8 +7,7 @@ public class PrimeFactors {
     public static List<Integer> factorize(long number) {
         List<Integer> factors = new ArrayList<Integer>();
         number = extractFactors(number, factors, 2);
-        int until = (int) Math.sqrt(number) + 1;
-        for (int i = 3; i < until; i += 2) {
+        for (int i = 3; i <= number; i += 2) {
             number = extractFactors(number, factors, i);
         }
         return factors;

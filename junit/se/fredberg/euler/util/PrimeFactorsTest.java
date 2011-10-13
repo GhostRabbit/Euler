@@ -1,29 +1,17 @@
 package se.fredberg.euler.util;
 
-import static org.junit.Assert.*;
-
-import java.util.Arrays;
-import java.util.List;
+import static org.fest.assertions.Assertions.*;
 
 import org.junit.Test;
 
 public class PrimeFactorsTest {
     @Test
-    public void primeFactors_8() {
-        List<Integer> expected = Arrays.asList(new Integer[] { 2, 2, 2 });
-        assertEquals(expected, PrimeFactors.factorize(8));
-    }
-
-    @Test
-    public void primeFactors_27() {
-        List<Integer> expected = Arrays.asList(new Integer[] { 3, 3, 3 });
-        assertEquals(expected, PrimeFactors.factorize(27));
-    }
-
-    @Test
-    public void primeFactors_13195() {
-        // Primefactors of 13195 are 5, 7, 13 and 29.
-        List<Integer> expected = Arrays.asList(new Integer[] { 5, 7, 13, 29 });
-        assertEquals(expected, PrimeFactors.factorize(13195));
+    public void primeFactors() {
+        assertThat(PrimeFactors.factorize(3)).containsExactly(3);
+        assertThat(PrimeFactors.factorize(8)).containsExactly(2, 2, 2);
+        assertThat(PrimeFactors.factorize(10)).containsExactly(2, 5);
+        assertThat(PrimeFactors.factorize(21)).containsExactly(3, 7);
+        assertThat(PrimeFactors.factorize(27)).containsExactly(3, 3, 3);
+        assertThat(PrimeFactors.factorize(13195)).containsExactly(5, 7, 13, 29);
     }
 }
