@@ -29,41 +29,28 @@ public class E014 {
      */
 
     public static void main(String[] args) {
-        long t = System.currentTimeMillis();
         Map<Integer, Integer> buffer = new HashMap<Integer, Integer>(10000);
         buffer.put(1, 1);
         int max = 0;
         int numberToRemember = 0;
         for (int i = 1; i < 1000000; i++) {
-            try {
-                int count = getStepCount(i, buffer);
-                if (max < count) {
-                    max = count;
-                    numberToRemember = i;
-                }
-            } catch (StackOverflowError e) {
-                System.out.println("Error at " + i);
-                System.out.println("size : " + buffer.size());
-                break;
+            int count = getStepCount(i, buffer);
+            if (max < count) {
+                max = count;
+                numberToRemember = i;
             }
         }
         System.out.println(numberToRemember);
-        System.out.println(System.currentTimeMillis() - t + " ms");
     }
 
-    private static int getStepCount(int x, Map<Integer, Integer> buffer) {
-//        Integer value = buffer.get(x);
-//        if (value == null) {
-//            if (x % 2 == 0) {
-//                value = getStepCount(x / 2, buffer) + 1;
-//            } else {
-//                value = getStepCount(3 * x + 1, buffer) + 1;
-//            }
-//            buffer.put(x, value);
-//        }
-//        return value;
-        if (x == 1) { return 1;}
-        return (x % 2 == 0) ? getStepCount(x / 2, buffer) + 1 : getStepCount(3 * x + 1, buffer);
+    private static int getStepCount(long x, Map<Integer, Integer> buffer) {
+        if (x == 1) {
+            return 1;
+        }
+        if (x % 2 == 0) {
+            return getStepCount(x / 2, buffer) + 1;
+        }
+        return getStepCount(3 * x + 1, buffer);
     }
 
 }
