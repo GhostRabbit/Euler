@@ -3,6 +3,7 @@ package se.fredberg.euler;
 import java.util.LinkedList;
 import java.util.List;
 
+import se.fredberg.euler.matcher.Matcher;
 import se.fredberg.euler.matcher.PalindromeMatcher;
 
 public class E004 {
@@ -30,7 +31,7 @@ public class E004 {
         return max;
     }
 
-    private static List<Integer> filterPalindromes(List<Integer> products, PalindromeMatcher matcher) {
+    private static List<Integer> filterPalindromes(List<Integer> products, Matcher<Integer> matcher) {
         List<Integer> palindromes = new LinkedList<Integer>();
         for (Integer i : products) {
             if (matcher.matches(i)) {

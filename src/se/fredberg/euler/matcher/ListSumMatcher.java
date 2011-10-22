@@ -2,7 +2,7 @@ package se.fredberg.euler.matcher;
 
 import java.util.List;
 
-public class ListSumMatcher {
+public class ListSumMatcher implements Matcher<List<Integer>>{
 
     private final int targetSum;
 
@@ -10,6 +10,7 @@ public class ListSumMatcher {
         this.targetSum = targetSum;
     }
 
+    @Override
     public boolean matches(List<Integer> list) {
         int sum = 0;
         for (Integer x : list) {

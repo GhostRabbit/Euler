@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import se.fredberg.euler.matcher.EvenMatcher;
+import se.fredberg.euler.matcher.Matcher;
 
 public class E002 {
     /*
@@ -37,7 +38,7 @@ public class E002 {
         return sum;
     }
 
-    private List<Integer> filter(List<Integer> sequence, EvenMatcher evenMatcher) {
+    private List<Integer> filter(List<Integer> sequence, Matcher<Integer> evenMatcher) {
         List<Integer> filtered = new ArrayList<Integer>();
         for (Integer i : sequence) {
             if (evenMatcher.matches(i)) {

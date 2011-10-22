@@ -1,5 +1,8 @@
 package se.fredberg.euler;
 
+import se.fredberg.euler.util.DivisorCheckedSum;
+import se.fredberg.euler.util.Processor;
+
 public class E001 {
     /*
      * If we list all the natural numbers below 10 that are multiples of 3 or 5,
@@ -8,12 +11,10 @@ public class E001 {
      * Find the sum of all the multiples of 3 or 5 below 1000.
      */
     public static void main(String[] args) {
-        int sum = 0;
+        Processor<Integer> processor = new DivisorCheckedSum(3, 5);
         for (int i = 1; i < 1000; i++) {
-            if (i % 3 == 0 || i % 5 == 0) {
-                sum += i;
-            }
+            processor.process(i);
         }
-        System.out.println(sum);
+        System.out.println(processor.getResult());
     }
 }

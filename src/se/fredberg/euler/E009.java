@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import se.fredberg.euler.matcher.ListSumMatcher;
+import se.fredberg.euler.matcher.Matcher;
 
 public class E009 {
 
@@ -18,29 +19,33 @@ public class E009 {
      */
 
     public static void main(String[] args) {
-        ListSumMatcher matcher = new ListSumMatcher(1000);
+        Matcher<List<Integer>> matcher = new ListSumMatcher(1000);
         List<Integer> triplet = new E009().findTriplets(matcher);
         System.out.println(triplet.get(0) * triplet.get(1) * triplet.get(2));
     }
 
-    private List<Integer> findTriplets(ListSumMatcher matcher) {
+    private List<Integer> findTriplets(Matcher<List<Integer>> matcher) {
         int c = 4;
         while (c++ < 1000) {
             for (int a = 1; a < c; a++) {
-                int bb = c * c - a * a;
-                int b = (int) Math.sqrt(bb);
-                if (b >= a) {
-                    continue;
-                }
-                if (b * b != bb) { // Not a square
-                    continue;
-                }
-                List<Integer> triplet = Arrays.asList(b, a, c);
-                if (matcher.matches(triplet)) {
+                List<Integer> triplet = createTriplet(c, a);
+                if (triplet != null && matcher.matches(triplet)) {
                     return triplet;
                 }
             }
         }
         return null;
+    }
+
+    private List<Integer> createTriplet(int c, int a) {
+        int bb = c * c - a * a;
+        int b = (int) Math.sqrt(bb);
+        if (b >= a) { // Avoid duplicates
+            return null;
+        }
+        if (b * b != bb) { // Not a square
+            return null;
+        }
+        return Arrays.asList(b, a, c);
     }
 }

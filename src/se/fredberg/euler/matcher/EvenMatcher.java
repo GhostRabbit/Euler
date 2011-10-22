@@ -1,7 +1,9 @@
 package se.fredberg.euler.matcher;
 
-public class EvenMatcher {
-    public boolean matches(int i) {
+public class EvenMatcher implements Matcher<Integer> {
+
+    @Override
+    public boolean matches(Integer i) {
         return i % 2 == 0;
     }
 }
