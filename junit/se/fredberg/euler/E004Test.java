@@ -14,10 +14,4 @@ public class E004Test {
         assertThat(actual).contains(100, 110, 120, 121, 132, 144);
     }
     
-    @Test
-    public void findPalaindormes() {
-        List<Integer> candidates = new E004().products(91, 99);
-        assertThat(new E004().findPalindromes(candidates)).isNotEmpty();
-    }
-    
 }

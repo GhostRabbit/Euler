@@ -3,8 +3,10 @@ package se.fredberg.euler;
 import java.util.LinkedList;
 import java.util.List;
 
-import se.fredberg.euler.matcher.Matcher;
 import se.fredberg.euler.matcher.PalindromeMatcher;
+import se.fredberg.euler.processor.ConditionedProcessor;
+import se.fredberg.euler.processor.MaxProcessor;
+import se.fredberg.euler.util.IteratorLooper;
 
 public class E004 {
 
@@ -17,32 +19,11 @@ public class E004 {
     public static void main(String[] args) {
         E004 e004 = new E004();
         List<Integer> products = e004.products(100, 999);
-        List<Integer> palindromes = e004.findPalindromes(products);
-        System.out.println(max(palindromes));
-    }
-
-    static Integer max(List<Integer> palindromes) {
-        Integer max = Integer.MIN_VALUE;
-        for (Integer i : palindromes) {
-            if (max < i) {
-                max = i;
-            }
-        }
-        return max;
-    }
-
-    private static List<Integer> filterPalindromes(List<Integer> products, Matcher<Integer> matcher) {
-        List<Integer> palindromes = new LinkedList<Integer>();
-        for (Integer i : products) {
-            if (matcher.matches(i)) {
-                palindromes.add(i);
-            }
-        }
-        return palindromes;
-    }
-
-    List<Integer> findPalindromes(List<Integer> products) {
-        return filterPalindromes(products, new PalindromeMatcher());
+        MaxProcessor max = new MaxProcessor();
+        PalindromeMatcher matcher = new PalindromeMatcher();
+        ConditionedProcessor<Integer> conditionedProcessor = new ConditionedProcessor<Integer>(matcher, max);
+        new IteratorLooper<Integer>(products, conditionedProcessor).run();
+        System.out.println(max.getResult());
     }
 
     List<Integer> products(int i, int j) {
