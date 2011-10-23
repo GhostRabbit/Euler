@@ -1,13 +1,14 @@
 package se.fredberg.euler;
 
-import se.fredberg.euler.fibonnaci.FibonacciGenerator;
+import se.fredberg.euler.generator.FibonacciGenerator;
+import se.fredberg.euler.generator.Generator;
 import se.fredberg.euler.matcher.EvenMatcher;
 import se.fredberg.euler.matcher.LessThenMatcher;
 import se.fredberg.euler.matcher.Matcher;
-import se.fredberg.euler.util.ConditionedProcessor;
-import se.fredberg.euler.util.Generator;
-import se.fredberg.euler.util.Processor;
-import se.fredberg.euler.util.Summerizer;
+import se.fredberg.euler.processor.ConditionedProcessor;
+import se.fredberg.euler.processor.Processor;
+import se.fredberg.euler.processor.SumProcessor;
+import se.fredberg.euler.util.Looper;
 
 public class E002 {
     /*
@@ -21,19 +22,10 @@ public class E002 {
      */
 
     public static void main(String[] args) {
-        Generator<Integer> generator = new FibonacciGenerator();
-        Processor<Integer> processor = new ConditionedProcessor<Integer>(new Summerizer(), new EvenMatcher());
-        Matcher<Integer> generatorLimit = new LessThenMatcher(4000000);
-        long sum = getEvenSum(generator, processor, generatorLimit);
-        System.out.println(sum);
-    }
-
-    private static long getEvenSum(Generator<Integer> generator, Processor<Integer> processor, Matcher<Integer> generatorLimit) {
-        int next = generator.next();
-        while (generatorLimit.matches(next)) {
-            processor.process(next);
-            next = generator.next();
-        }
-        return processor.getResult();
+        Generator<Integer> fibonaccies = new FibonacciGenerator();
+        Processor<Integer> sumOfEvens = new ConditionedProcessor<Integer>(new EvenMatcher(), new SumProcessor());
+        Matcher<Integer> lessThen4million = new LessThenMatcher(4000000);
+        new Looper<Integer>(fibonaccies, lessThen4million, sumOfEvens).run();
+        System.out.println(sumOfEvens.getResult());
     }
 }

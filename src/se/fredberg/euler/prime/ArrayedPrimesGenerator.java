@@ -3,10 +3,9 @@ package se.fredberg.euler.prime;
 import java.util.LinkedList;
 import java.util.List;
 
-import se.fredberg.euler.matcher.Matcher;
-import se.fredberg.euler.util.Generator;
+import se.fredberg.euler.generator.Generator;
 
-public class ArrayedPrimesGenerator implements Generator<Integer>, Matcher<Integer> {
+public class ArrayedPrimesGenerator implements Generator<Integer> {
 
     private int x = 1;
     private List<Integer> primes = new LinkedList<Integer>();
@@ -22,8 +21,7 @@ public class ArrayedPrimesGenerator implements Generator<Integer>, Matcher<Integ
         }
     }
 
-    @Override
-    public boolean matches(Integer x) {
+    private boolean matches(Integer x) {
         for (int p : primes) {
             if (x % p == 0) {
                 return false;

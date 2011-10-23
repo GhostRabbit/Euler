@@ -1,7 +1,15 @@
 package se.fredberg.euler;
 
-import se.fredberg.euler.util.DivisorCheckedSum;
-import se.fredberg.euler.util.Processor;
+import se.fredberg.euler.generator.Generator;
+import se.fredberg.euler.generator.NaturalNumberGenerator;
+import se.fredberg.euler.matcher.DivisorMatcher;
+import se.fredberg.euler.matcher.LessThenMatcher;
+import se.fredberg.euler.matcher.Matcher;
+import se.fredberg.euler.matcher.OrMatcher;
+import se.fredberg.euler.processor.ConditionedProcessor;
+import se.fredberg.euler.processor.Processor;
+import se.fredberg.euler.processor.SumProcessor;
+import se.fredberg.euler.util.Looper;
 
 public class E001 {
     /*
@@ -11,10 +19,16 @@ public class E001 {
      * Find the sum of all the multiples of 3 or 5 below 1000.
      */
     public static void main(String[] args) {
-        Processor<Integer> processor = new DivisorCheckedSum(3, 5);
-        for (int i = 1; i < 1000; i++) {
-            processor.process(i);
-        }
-        System.out.println(processor.getResult());
+        Processor<Integer> sumOfDevisableNumbers = createProcessor();
+        Generator<Integer> naturalNumbers = new NaturalNumberGenerator();
+        Matcher<Integer> lessThen1000 = new LessThenMatcher(1000);
+        new Looper<Integer>(naturalNumbers, lessThen1000, sumOfDevisableNumbers).run();
+        System.out.println(sumOfDevisableNumbers.getResult());
+    }
+
+    private static Processor<Integer> createProcessor() {
+        Matcher<Integer> divisors = new OrMatcher<Integer>(new DivisorMatcher(3), new DivisorMatcher(5));
+        Processor<Integer> sum = new SumProcessor();
+        return new ConditionedProcessor<Integer>(divisors, sum);
     }
 }

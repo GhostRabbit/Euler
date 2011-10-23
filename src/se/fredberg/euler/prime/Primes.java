@@ -3,7 +3,7 @@ package se.fredberg.euler.prime;
 import java.util.ArrayList;
 import java.util.List;
 
-import se.fredberg.euler.util.Generator;
+import se.fredberg.euler.generator.Generator;
 
 
 public class Primes {

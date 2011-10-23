@@ -4,17 +4,17 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import se.fredberg.euler.util.Generator;
+import se.fredberg.euler.generator.Generator;
 
 public class ArrayedPrimesGeneratorTest {
 
     @Test
     public void test() {
-        Generator primes = new ArrayedPrimesGenerator();
-        assertEquals(2, primes.next());
-        assertEquals(3, primes.next());
-        assertEquals(5, primes.next());
-        assertEquals(7, primes.next());
-        assertEquals(11, primes.next());
+        Generator<Integer> primes = new ArrayedPrimesGenerator();
+        assertEquals(2, (int) primes.next());
+        assertEquals(3, (int) primes.next());
+        assertEquals(5, (int) primes.next());
+        assertEquals(7, (int) primes.next());
+        assertEquals(11, (int) primes.next());
     }
 }
