@@ -20,13 +20,4 @@ public class FibonacciGeneratorTest {
         assertEquals(55, (int) generator.next());
         assertEquals(89, (int) generator.next());
     }
-
-    @Test
-    public void performanceTest() {
-        // Expect this to be @Ignored to not slow down the suite
-        FibonacciGenerator generator = new FibonacciGenerator();
-        for (int i = 0; i < 5000; i++) {
-            generator.next();
-        }
-    }
 }

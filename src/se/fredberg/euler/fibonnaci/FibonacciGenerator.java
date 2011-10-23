@@ -6,24 +6,28 @@ import se.fredberg.euler.util.Generator;
 
 public class FibonacciGenerator implements Generator<Integer> {
 
-    private Stack<Integer> fibonaccieNumbers;
+    // To hold the first and second numbers to add
+    private Stack<Integer> latestPair;
 
     public FibonacciGenerator() {
-        fibonaccieNumbers = new Stack<Integer>();
+        latestPair = new Stack<Integer>();
     }
 
     @Override
     public Integer next() {
-        int size = fibonaccieNumbers.size();
-        int next;
-        if (size < 2) {
-            next = size + 1;
-        } else {
-            int last = fibonaccieNumbers.pop();
-            next = last + fibonaccieNumbers.pop();
-            fibonaccieNumbers.add(last);
-        }
-        fibonaccieNumbers.add(next);
+        int next = calculateNext();
+        latestPair.add(next); // The new second
         return next;
+    }
+
+    private int calculateNext() {
+        if (latestPair.size() < 2) {
+            // The first two values are special
+            return latestPair.size() + 1;
+        }
+        int second = latestPair.pop();
+        int first = latestPair.pop();
+        latestPair.add(second); // The new first
+        return first + second;
     }
 }

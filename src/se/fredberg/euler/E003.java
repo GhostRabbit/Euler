@@ -13,7 +13,8 @@ public class E003 {
 
     public static void main(String[] args) {
         List<Integer> primeFactors = PrimeFactors.factorize(600851475143L);
-        System.out.println(primeFactors.get(primeFactors.size() - 1));
+        Integer largestPrimeFactor = primeFactors.get(primeFactors.size() - 1);
+        System.out.println(largestPrimeFactor);
     }
 
 }

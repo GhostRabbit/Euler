@@ -2,8 +2,12 @@ package se.fredberg.euler;
 
 import se.fredberg.euler.fibonnaci.FibonacciGenerator;
 import se.fredberg.euler.matcher.EvenMatcher;
+import se.fredberg.euler.matcher.LessThenMatcher;
 import se.fredberg.euler.matcher.Matcher;
+import se.fredberg.euler.util.ConditionedProcessor;
 import se.fredberg.euler.util.Generator;
+import se.fredberg.euler.util.Processor;
+import se.fredberg.euler.util.Summerizer;
 
 public class E002 {
     /*
@@ -14,21 +18,22 @@ public class E002 {
      * 
      * By considering the terms in the Fibonacci sequence whose values do not
      * exceed four million, find the sum of the even-valued terms.
-     * 
-     * (Answer is 4613732)
      */
 
     public static void main(String[] args) {
         Generator<Integer> generator = new FibonacciGenerator();
-        Matcher<Integer> matcher = new EvenMatcher();
+        Processor<Integer> processor = new ConditionedProcessor<Integer>(new Summerizer(), new EvenMatcher());
+        Matcher<Integer> generatorLimit = new LessThenMatcher(4000000);
+        long sum = getEvenSum(generator, processor, generatorLimit);
+        System.out.println(sum);
+    }
+
+    private static long getEvenSum(Generator<Integer> generator, Processor<Integer> processor, Matcher<Integer> generatorLimit) {
         int next = generator.next();
-        long sum = 0L;
-        while (next < 4000000) {
-            if (matcher.matches(next)) {
-                sum += next;
-            }
+        while (generatorLimit.matches(next)) {
+            processor.process(next);
             next = generator.next();
         }
-        System.out.println(sum);
+        return processor.getResult();
     }
 }
