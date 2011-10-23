@@ -1,10 +1,9 @@
 package se.fredberg.euler;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import se.fredberg.euler.fibonnaci.FibonacciGenerator;
 import se.fredberg.euler.matcher.EvenMatcher;
 import se.fredberg.euler.matcher.Matcher;
+import se.fredberg.euler.util.Generator;
 
 public class E002 {
     /*
@@ -15,50 +14,21 @@ public class E002 {
      * 
      * By considering the terms in the Fibonacci sequence whose values do not
      * exceed four million, find the sum of the even-valued terms.
+     * 
+     * (Answer is 4613732)
      */
 
     public static void main(String[] args) {
-        System.out.println(new E002().solve());
-    }
-
-    private long solve() {
-        List<Integer> sequence = getFibonacciSequence(4000000);
-        return sumEvenEntries(sequence);
-    }
-
-    long sumEvenEntries(List<Integer> sequence) {
-        return sum(filter(sequence, new EvenMatcher()));
-    }
-
-    private long sum(List<Integer> filter) {
+        Generator<Integer> generator = new FibonacciGenerator();
+        Matcher<Integer> matcher = new EvenMatcher();
+        int next = generator.next();
         long sum = 0L;
-        for (int i : filter) {
-            sum += i;
-        }
-        return sum;
-    }
-
-    private List<Integer> filter(List<Integer> sequence, Matcher<Integer> evenMatcher) {
-        List<Integer> filtered = new ArrayList<Integer>();
-        for (Integer i : sequence) {
-            if (evenMatcher.matches(i)) {
-                filtered.add(i);
+        while (next < 4000000) {
+            if (matcher.matches(next)) {
+                sum += next;
             }
+            next = generator.next();
         }
-        return filtered;
-    }
-
-    List<Integer> getFibonacciSequence(int limit) {
-        List<Integer> sequence = new ArrayList<Integer>();
-        sequence.add(1);
-        sequence.add(2);
-        while (true) {
-            int next = sequence.get(sequence.size() - 1) + sequence.get(sequence.size() - 2);
-            if (next > limit) {
-                break;
-            }
-            sequence.add(next);
-        }
-        return sequence;
+        System.out.println(sum);
     }
 }

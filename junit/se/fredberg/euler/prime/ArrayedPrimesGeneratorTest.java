@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import se.fredberg.euler.util.Generator;
 
 public class ArrayedPrimesGeneratorTest {
 
@@ -15,6 +16,5 @@ public class ArrayedPrimesGeneratorTest {
         assertEquals(5, primes.next());
         assertEquals(7, primes.next());
         assertEquals(11, primes.next());
-
     }
 }

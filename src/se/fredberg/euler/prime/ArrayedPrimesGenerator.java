@@ -3,23 +3,27 @@ package se.fredberg.euler.prime;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ArrayedPrimesGenerator implements Generator {
+import se.fredberg.euler.matcher.Matcher;
+import se.fredberg.euler.util.Generator;
+
+public class ArrayedPrimesGenerator implements Generator<Integer>, Matcher<Integer> {
 
     private int x = 1;
     private List<Integer> primes = new LinkedList<Integer>();
 
     @Override
-    public int next() {
+    public Integer next() {
         while (true) {
             x++;
-            if (isPrime(x)) {
+            if (matches(x)) {
                 primes.add(x);
                 return x;
             }
         }
     }
 
-    private boolean isPrime(int x) {
+    @Override
+    public boolean matches(Integer x) {
         for (int p : primes) {
             if (x % p == 0) {
                 return false;
