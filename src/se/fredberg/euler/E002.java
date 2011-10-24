@@ -8,7 +8,7 @@ import se.fredberg.euler.matcher.Matcher;
 import se.fredberg.euler.processor.ConditionedProcessor;
 import se.fredberg.euler.processor.Processor;
 import se.fredberg.euler.processor.SumProcessor;
-import se.fredberg.euler.util.Looper;
+import se.fredberg.euler.util.GeneratorLooper;
 
 public class E002 {
     /*
@@ -25,7 +25,7 @@ public class E002 {
         Generator<Integer> fibonaccies = new FibonacciGenerator();
         Processor<Integer> sumOfEvens = new ConditionedProcessor<Integer>(new EvenMatcher(), new SumProcessor());
         Matcher<Integer> lessThen4million = new LessThenMatcher(4000000);
-        new Looper<Integer>(fibonaccies, lessThen4million, sumOfEvens).run();
+        new GeneratorLooper<Integer>(fibonaccies, lessThen4million, sumOfEvens).run();
         System.out.println(sumOfEvens.getResult());
     }
 }

@@ -4,13 +4,13 @@ import se.fredberg.euler.generator.Generator;
 import se.fredberg.euler.matcher.Matcher;
 import se.fredberg.euler.processor.Processor;
 
-public class Looper<T> implements Runnable {
+public class GeneratorLooper<T> implements Runnable {
 
     private final Generator<T> generator;
     private final Processor<T> processor;
     private final Matcher<T> breakCondition;
 
-    public Looper(Generator<T> generator, Matcher<T> breakCondition, Processor<T> processor) {
+    public GeneratorLooper(Generator<T> generator, Matcher<T> breakCondition, Processor<T> processor) {
         this.generator = generator;
         this.processor = processor;
         this.breakCondition = breakCondition;
@@ -22,6 +22,5 @@ public class Looper<T> implements Runnable {
             processor.process(next);
             next = generator.next();
         }
-        
     }
 }

@@ -1,12 +1,10 @@
 package se.fredberg.euler;
 
-import java.util.LinkedList;
-import java.util.List;
-
+import se.fredberg.euler.generator.ProductGenerator;
 import se.fredberg.euler.matcher.PalindromeMatcher;
 import se.fredberg.euler.processor.ConditionedProcessor;
 import se.fredberg.euler.processor.MaxProcessor;
-import se.fredberg.euler.util.IteratorLooper;
+import se.fredberg.euler.util.LimitedGeneratorLooper;
 
 public class E004 {
 
@@ -17,22 +15,10 @@ public class E004 {
      * Find the largest palindrome made from the product of two 3-digit numbers.
      */
     public static void main(String[] args) {
-        E004 e004 = new E004();
-        List<Integer> products = e004.products(100, 999);
         MaxProcessor max = new MaxProcessor();
         PalindromeMatcher matcher = new PalindromeMatcher();
         ConditionedProcessor<Integer> conditionedProcessor = new ConditionedProcessor<Integer>(matcher, max);
-        new IteratorLooper<Integer>(products, conditionedProcessor).run();
+        new LimitedGeneratorLooper<Integer>(new ProductGenerator(100, 999), conditionedProcessor).run();
         System.out.println(max.getResult());
-    }
-
-    List<Integer> products(int i, int j) {
-        List<Integer> results = new LinkedList<Integer>();
-        for (int a = i; a <= j; a++) {
-            for (int b = i; b <= j; b++) {
-                results.add(a * b);
-            }
-        }
-        return results;
     }
 }

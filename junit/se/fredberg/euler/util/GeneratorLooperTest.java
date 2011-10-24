@@ -10,7 +10,7 @@ import se.fredberg.euler.generator.Generator;
 import se.fredberg.euler.matcher.Matcher;
 import se.fredberg.euler.processor.Processor;
 
-public class LooperTest {
+public class GeneratorLooperTest {
 
     @Mock
     Generator<Integer> generator;
@@ -18,12 +18,12 @@ public class LooperTest {
     Processor<Integer> processor;
     @Mock
     Matcher<Integer> matcher;
-    private Looper<Integer> looper;
+    private GeneratorLooper<Integer> looper;
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        looper = new Looper<Integer>(generator, matcher, processor);
+        looper = new GeneratorLooper<Integer>(generator, matcher, processor);
     }
 
     @Test
@@ -43,6 +43,4 @@ public class LooperTest {
         verify(matcher, times(3)).matches(anyInt());
         verify(processor, times(2)).process(anyInt());
     }
-
-    
 }

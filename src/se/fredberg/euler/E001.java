@@ -9,7 +9,7 @@ import se.fredberg.euler.matcher.OrMatcher;
 import se.fredberg.euler.processor.ConditionedProcessor;
 import se.fredberg.euler.processor.Processor;
 import se.fredberg.euler.processor.SumProcessor;
-import se.fredberg.euler.util.Looper;
+import se.fredberg.euler.util.GeneratorLooper;
 
 public class E001 {
     /*
@@ -22,7 +22,7 @@ public class E001 {
         Processor<Integer> sumOfDevisableNumbers = createProcessor();
         Generator<Integer> naturalNumbers = new NaturalNumberGenerator();
         Matcher<Integer> lessThen1000 = new LessThenMatcher(1000);
-        new Looper<Integer>(naturalNumbers, lessThen1000, sumOfDevisableNumbers).run();
+        new GeneratorLooper<Integer>(naturalNumbers, lessThen1000, sumOfDevisableNumbers).run();
         System.out.println(sumOfDevisableNumbers.getResult());
     }
 
