@@ -2,6 +2,8 @@ package se.fredberg.euler.util;
 
 public class TriangleNumberIterator {
 
+    //TODO definitly a generator
+    
     /*
      * The n:th Triangle number is the sum of 1..n.
      */

@@ -1,6 +1,6 @@
 package se.fredberg.euler.generator;
 
-import static org.junit.Assert.*;
+import static org.fest.assertions.Assertions.*;
 
 import org.junit.Test;
 
@@ -11,15 +11,15 @@ public class FibonacciGeneratorTest {
     @Test
     public void fibonacciSequence() {
         FibonacciGenerator generator = new FibonacciGenerator();
-        assertEquals(1, (int) generator.next());
-        assertEquals(2, (int) generator.next());
-        assertEquals(3, (int) generator.next());
-        assertEquals(5, (int) generator.next());
-        assertEquals(8, (int) generator.next());
-        assertEquals(13, (int) generator.next());
-        assertEquals(21, (int) generator.next());
-        assertEquals(34, (int) generator.next());
-        assertEquals(55, (int) generator.next());
-        assertEquals(89, (int) generator.next());
+        assertThat(generator.next()).isEqualTo(1);
+        assertThat(generator.next()).isEqualTo(2);
+        assertThat(generator.next()).isEqualTo(3);
+        assertThat(generator.next()).isEqualTo(5);
+        assertThat(generator.next()).isEqualTo(8);
+        assertThat(generator.next()).isEqualTo(13);
+        assertThat(generator.next()).isEqualTo(21);
+        assertThat(generator.next()).isEqualTo(34);
+        assertThat(generator.next()).isEqualTo(55);
+        assertThat(generator.next()).isEqualTo(89);
     }
 }

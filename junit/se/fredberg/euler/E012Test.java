@@ -15,6 +15,5 @@ public class E012Test {
         assertThat(E012.getDivisorCount(15)).isEqualTo(4);
         assertThat(E012.getDivisorCount(21)).isEqualTo(4);
         assertThat(E012.getDivisorCount(28)).isEqualTo(6);
-        
     }
 }

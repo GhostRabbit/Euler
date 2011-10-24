@@ -1,17 +1,16 @@
 package se.fredberg.euler.generator;
 
-import static org.junit.Assert.*;
+import static org.fest.assertions.Assertions.*;
 
 import org.junit.Test;
-
 
 public class NaturalNumberGeneratorTest {
 
     @Test
     public void testNaturalNumberSequence() {
         NaturalNumberGenerator generator = new NaturalNumberGenerator();
-        assertEquals(0, (int) generator.next());
-        assertEquals(1, (int) generator.next());
-        assertEquals(2, (int) generator.next());
+        assertThat(generator.next()).isEqualTo(0);
+        assertThat(generator.next()).isEqualTo(1);
+        assertThat(generator.next()).isEqualTo(2);
     }
 }

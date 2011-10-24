@@ -1,6 +1,6 @@
 package se.fredberg.euler.matcher;
 
-import static org.junit.Assert.*;
+import static org.fest.assertions.Assertions.*;
 
 import org.junit.Test;
 
@@ -11,17 +11,17 @@ public class EvenMatcherTest {
     
     @Test
     public void matchesEvenNumbers() {
-        assertTrue(matcher.matches(2));
-        assertTrue(matcher.matches(4));
-        assertTrue(matcher.matches(0));
-        assertTrue(matcher.matches(-2));
+        assertThat(matcher.matches(2)).isTrue();
+        assertThat(matcher.matches(4)).isTrue();
+        assertThat(matcher.matches(0)).isTrue();
+        assertThat(matcher.matches(-2)).isTrue();
     }
     
     @Test
     public void doesNotMatchUnevenNumbers() {
-        assertFalse(matcher.matches(1));
-        assertFalse(matcher.matches(3));
-        assertFalse(matcher.matches(-1));
+        assertThat(matcher.matches(1)).isFalse();
+        assertThat(matcher.matches(3)).isFalse();
+        assertThat(matcher.matches(-1)).isFalse();
     }
 
 }
