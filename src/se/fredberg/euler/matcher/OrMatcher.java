@@ -6,6 +6,7 @@ public class OrMatcher<T> implements Matcher<T> {
     private final Matcher<T> right;
 
     public OrMatcher(Matcher<T> left, Matcher<T> right) {
+        // TODO Make this a vararg?
         this.left = left;
         this.right = right;
     }

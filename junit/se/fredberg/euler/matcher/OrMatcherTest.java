@@ -13,5 +13,10 @@ public class OrMatcherTest {
         assertThat(new OrMatcher<Integer>(new AlwaysMatcher<Integer>(), new NeverMatcher<Integer>()).matches(1)).isTrue();
         assertThat(new OrMatcher<Integer>(new NeverMatcher<Integer>(), new NeverMatcher<Integer>()).matches(1)).isFalse();
     }
+    
+//    @Test(expected = IllegalArgumentException.class)
+//    public void requireAtLeastTwoMatchers() {
+//        
+//    }
 
 }

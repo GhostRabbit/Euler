@@ -8,7 +8,7 @@ import se.fredberg.euler.matcher.Matcher;
 
 public class E009 {
 
-    /*
+    /**
      * A Pythagorean triplet is a set of three natural numbers, a b c, for
      * which,
      * 

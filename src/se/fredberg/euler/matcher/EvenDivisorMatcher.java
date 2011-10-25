@@ -1,10 +1,10 @@
 package se.fredberg.euler.matcher;
 
-public class DivisorMatcher implements Matcher<Integer> {
+public class EvenDivisorMatcher implements Matcher<Integer> {
 
     private final int divisor;
 
-    public DivisorMatcher(int divisor) {
+    public EvenDivisorMatcher(int divisor) {
         this.divisor = divisor;
     }
 

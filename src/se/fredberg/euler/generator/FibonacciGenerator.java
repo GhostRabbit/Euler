@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class FibonacciGenerator implements Generator<Integer> {
 
-    // To hold the first and second numbers to add
+    // To hold the two last numbers to add
     private Stack<Integer> latestPair;
 
     public FibonacciGenerator() {
