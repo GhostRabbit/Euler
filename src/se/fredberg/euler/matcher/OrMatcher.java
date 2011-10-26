@@ -1,19 +1,24 @@
 package se.fredberg.euler.matcher;
 
+import java.util.LinkedList;
+
 public class OrMatcher<T> implements Matcher<T> {
 
-    private final Matcher<T> left;
-    private final Matcher<T> right;
-
-    public OrMatcher(Matcher<T> left, Matcher<T> right) {
-        // TODO Make this a vararg?
-        this.left = left;
-        this.right = right;
+    private final LinkedList<Matcher<T>> matchers = new LinkedList<Matcher<T>>();
+    
+    public OrMatcher<T> add(Matcher<T> matcher) {
+        matchers.add(matcher);
+        return this;
     }
 
     @Override
     public boolean matches(T arg) {
-        return left.matches(arg) || right.matches(arg);
+        for (Matcher<T> m : matchers) {
+            if (m.matches(arg)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

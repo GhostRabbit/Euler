@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="tests"/>
+	<classpathentry kind="src" path="e2eTests"/>
 	<classpathentry kind="lib" path="C:/Tools/Mockito/mockito-all-1.8.5.jar" sourcepath="C:/Users/Mattias/.m2/repository/org/mockito/mockito-all/1.8.5/mockito-all-1.8.5-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Tools/fest-assert-1.4/fest-assert-1.4.jar" sourcepath="C:/Tools/fest-assert-1.4"/>
 	<classpathentry kind="lib" path="C:/Tools/fest-assert-1.4/lib/fest-util-1.1.6.jar" sourcepath="C:/Tools/fest-assert-1.4/lib"/>
