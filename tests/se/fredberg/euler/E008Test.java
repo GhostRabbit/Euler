@@ -4,7 +4,7 @@ import static org.fest.assertions.Assertions.*;
 
 import java.util.List;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class E008Test {
 
@@ -23,6 +23,6 @@ public class E008Test {
         assertThat(combos).hasSize(2);
         assertThat(combos.get(0)).containsExactly(0, 1, 2, 3);
         assertThat(combos.get(1)).containsExactly(1, 2, 3, 4);
-        
+
     }
 }

@@ -2,9 +2,7 @@ package se.fredberg.euler.generator;
 
 import static org.fest.assertions.Assertions.*;
 
-import org.junit.Test;
-
-import se.fredberg.euler.generator.FibonacciGenerator;
+import org.testng.annotations.Test;
 
 public class FibonacciGeneratorTest {
 

@@ -4,7 +4,7 @@ import static org.fest.assertions.Assertions.*;
 
 import java.util.Arrays;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class ListSumMatcherTest {
 

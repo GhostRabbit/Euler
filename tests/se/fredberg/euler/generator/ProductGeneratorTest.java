@@ -4,7 +4,7 @@ import static org.fest.assertions.Assertions.*;
 
 import java.util.NoSuchElementException;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class ProductGeneratorTest {
 
@@ -19,14 +19,14 @@ public class ProductGeneratorTest {
         assertThat(productGenerator.next()).isEqualTo(144);
     }
 
-    @Test(expected = NoSuchElementException.class)
+    @Test(expectedExceptions = NoSuchElementException.class)
     public void tooFar() {
         ProductGenerator productGenerator = new ProductGenerator(10, 10);
         productGenerator.next();
         productGenerator.next();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void upperLowerThenLower() {
         new ProductGenerator(10, 9);
     }

@@ -1,10 +1,8 @@
 package se.fredberg.euler.matcher;
 
-
 import static org.fest.assertions.Assertions.*;
 
-import org.junit.Test;
-
+import org.testng.annotations.Test;
 
 public class LessThenMatcherTest {
 

@@ -2,7 +2,7 @@ package se.fredberg.euler.util;
 
 import static org.fest.assertions.Assertions.*;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class TriangleNumberIteratorTest {
 

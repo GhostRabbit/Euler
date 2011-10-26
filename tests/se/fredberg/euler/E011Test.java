@@ -2,7 +2,7 @@ package se.fredberg.euler;
 
 import static org.fest.assertions.Assertions.*;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class E011Test {
 
@@ -14,7 +14,7 @@ public class E011Test {
         int numbers = 2;
         String actual = "";
         for (int x = numbers - 1; x < DATA.length; x++) {
-             for (int y = 0; y + numbers <= DATA.length; y++) {
+            for (int y = 0; y + numbers <= DATA.length; y++) {
                 for (int offset = 0; offset < numbers; offset++) {
                     actual += ("[" + (x - offset) + ", " + (y + offset) + "]");
                 }
@@ -23,7 +23,7 @@ public class E011Test {
         }
         assertThat(actual).isEqualTo(expected);
     }
-    
+
     @Test
     public void getMaxDiagonal2Product() {
         String expected = "[0, 0][1, 1] [0, 1][1, 2] [1, 0][2, 1] [1, 1][2, 2] ";
@@ -31,7 +31,7 @@ public class E011Test {
         String actual = "";
         for (int x = 0; x + numbers <= DATA.length; x++) {
             for (int y = 0; y + numbers <= DATA.length; y++) {
-                    for (int offset = 0; offset < numbers; offset++) {
+                for (int offset = 0; offset < numbers; offset++) {
                     actual += ("[" + (x + offset) + ", " + (y + offset) + "]");
                 }
                 actual += " ";
@@ -39,6 +39,5 @@ public class E011Test {
         }
         assertThat(actual).isEqualTo(expected);
     }
-
 
 }

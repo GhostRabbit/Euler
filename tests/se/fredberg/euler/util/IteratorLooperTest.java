@@ -4,10 +4,10 @@ import static org.mockito.Mockito.*;
 
 import java.util.Collections;
 
-import org.junit.Before;
-import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import se.fredberg.euler.processor.Processor;
 
@@ -16,14 +16,14 @@ public class IteratorLooperTest {
     @Mock
     Processor<Integer> processor;
 
-    @Before
+    @BeforeMethod
     public void setUp() {
         MockitoAnnotations.initMocks(this);
     }
 
     @Test
     public void emptyList() {
-        new IteratorLooper<Integer>(Collections.<Integer>emptyList(), processor).run();
+        new IteratorLooper<Integer>(Collections.<Integer> emptyList(), processor).run();
         verifyNoMoreInteractions(processor);
     }
 

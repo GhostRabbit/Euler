@@ -1,9 +1,9 @@
 package se.fredberg.euler.processor;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import static org.mockito.Mockito.*;
 
-import org.junit.Before;
-import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -17,7 +17,7 @@ public class ConditionedProcessorTest {
     @Mock
     Processor<Integer> p;
 
-    @Before
+    @BeforeMethod
     public void setUp() {
         MockitoAnnotations.initMocks(this);
     }

@@ -1,10 +1,12 @@
 package se.fredberg.euler.util;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Mock;
+import static org.mockito.Matchers.*;
 import static org.mockito.Mockito.*;
+
+import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import se.fredberg.euler.generator.Generator;
 import se.fredberg.euler.matcher.Matcher;
@@ -20,7 +22,7 @@ public class GeneratorLooperTest {
     Matcher<Integer> matcher;
     private GeneratorLooper<Integer> looper;
 
-    @Before
+    @BeforeMethod
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         looper = new GeneratorLooper<Integer>(generator, matcher, processor);

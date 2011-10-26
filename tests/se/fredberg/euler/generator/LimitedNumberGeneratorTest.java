@@ -4,7 +4,7 @@ import static org.fest.assertions.Assertions.*;
 
 import java.util.NoSuchElementException;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class LimitedNumberGeneratorTest {
 
@@ -16,12 +16,12 @@ public class LimitedNumberGeneratorTest {
         assertThat(generator.hasNext()).isEqualTo(false);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void limitLessThenStartIsIllegal() {
         new LimitedNumberGenerator(2, 1);
     }
-    
-    @Test(expected = NoSuchElementException.class)
+
+    @Test(expectedExceptions = NoSuchElementException.class)
     public void loopPastLimit() {
         LimitedNumberGenerator generator = new LimitedNumberGenerator(2, 2);
         generator.next();
