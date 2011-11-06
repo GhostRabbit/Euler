@@ -1,6 +1,7 @@
-package se.fredberg.euler;
+package se.fredberg.euler.problem;
 
-public class E010 {
+
+public class Problem010 implements Problem {
 
     /**
      * The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
@@ -12,11 +13,12 @@ public class E010 {
      * Breakpoint and x*x are tricks taken from the paper linked from problem.
      */
     
-    public static void main(String[] args) {
+    @Override
+    public long solve() {
         byte[] numbers = new byte[2000001];
         long sum = 0;
         int breakpoint = (int) Math.sqrt(20000000);
-        for (int x = 2; x < numbers.length; x++) {
+        for (int x = 2; x < numbers.length; x ++) {
             if (numbers[x] == 0) {
                 sum += x;
                 if (x < breakpoint) {
@@ -28,6 +30,6 @@ public class E010 {
                 }
             }
         }
-        System.out.println(sum);
+        return sum;
     }
 }

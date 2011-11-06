@@ -1,8 +1,8 @@
-package se.fredberg.euler;
+package se.fredberg.euler.problem;
 
 import se.fredberg.euler.prime.Primes;
 
-public class E007 {
+public class Problem007 implements Problem {
 
     /**
      * By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can
@@ -11,8 +11,8 @@ public class E007 {
      * What is the 10 001st prime number?
      */
 
-    public static void main(String[] args) {
-        System.out.println(Primes.getPrimeNumber(10001));
+    @Override
+    public long solve() {
+        return Primes.getPrimeNumber(10001);
     }
-
 }

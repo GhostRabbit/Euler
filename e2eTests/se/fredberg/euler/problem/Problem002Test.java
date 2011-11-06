@@ -5,10 +5,10 @@ import static org.fest.assertions.Assertions.*;
 import org.testng.annotations.Test;
 
 
-public class Problem001Test {
+public class Problem002Test {
 
     @Test
     public void solve() {
-        assertThat(new Problem001().solve()).isEqualTo(233168);
+        assertThat(new Problem002().solve()).isEqualTo(4613732);
     }
 }

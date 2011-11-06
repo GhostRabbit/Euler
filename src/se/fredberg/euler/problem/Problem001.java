@@ -13,7 +13,7 @@ import se.fredberg.euler.util.LimitedGeneratorLooper;
 public class Problem001 implements Problem {
 
     @Override
-    public Integer solve() {
+    public long solve() {
         Processor<Integer> sumOfMultiples = createProcessor();
         LimitedGenerator<Integer> naturalNumbers = new LimitedNumberGenerator(1, 999);
         new LimitedGeneratorLooper<Integer>(naturalNumbers, sumOfMultiples).run();

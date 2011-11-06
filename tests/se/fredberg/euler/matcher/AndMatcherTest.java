@@ -5,13 +5,13 @@ import static org.fest.assertions.Assertions.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class OrMatcherTest {
+public class AndMatcherTest {
 
-    private OrMatcher<Integer> matcher;
+    private AndMatcher<Integer> matcher;
 
     @BeforeMethod
     public void setup() {
-        matcher = new OrMatcher<Integer>();
+        matcher = new AndMatcher<Integer>();
     }
 
     @Test
@@ -21,12 +21,12 @@ public class OrMatcherTest {
 
     @Test
     public void checkCasesOneFalseOneTrue() {
-        assertThat(matcher.add(new NeverMatcher<Integer>()).add(new AlwaysMatcher<Integer>()).matches(1)).isTrue();
+        assertThat(matcher.add(new NeverMatcher<Integer>()).add(new AlwaysMatcher<Integer>()).matches(1)).isFalse();
     }
 
     @Test
     public void checkCasesOneTrueOneFalse() {
-        assertThat(matcher.add(new AlwaysMatcher<Integer>()).add(new NeverMatcher<Integer>()).matches(1)).isTrue();
+        assertThat(matcher.add(new AlwaysMatcher<Integer>()).add(new NeverMatcher<Integer>()).matches(1)).isFalse();
     }
 
     @Test
