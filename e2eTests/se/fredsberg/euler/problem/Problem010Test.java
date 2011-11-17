@@ -13,4 +13,11 @@ public class Problem010Test {
     public void solve() {
         assertThat(new Problem010().solve()).isEqualTo(142913828922L);
     }
+    
+   @Test
+   public void performance() {
+       for (int i = 0; i < 200; i++) {
+           new Problem010().solve();
+       }
+   }
 }
