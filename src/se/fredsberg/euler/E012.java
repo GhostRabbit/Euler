@@ -34,9 +34,9 @@ public class E012 {
      */
 
     public static void main(String[] args) {
-      TriangleNumberSequence iterator = new TriangleNumberSequence();
+      TriangleNumberSequence sequence = new TriangleNumberSequence();
         while (true) {
-            int number = iterator.next();
+            int number = sequence.next();
             if (getDivisorCount(number) > 500) {
                 System.out.println(number);
                 break;

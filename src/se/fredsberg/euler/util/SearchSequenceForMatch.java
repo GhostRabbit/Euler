@@ -1,14 +1,14 @@
 package se.fredsberg.euler.util;
 
-import se.fredsberg.euler.matcher.Condition;
+import se.fredsberg.euler.condition.Condition;
 import se.fredsberg.euler.sequence.Sequence;
 
-public class FindLooper {
+public class SearchSequenceForMatch {
 
     private final Condition<Integer> condition;
     private final Sequence<Integer> sequence;
 
-    public FindLooper(Condition<Integer> condition, Sequence<Integer> sequence) {
+    public SearchSequenceForMatch(Sequence<Integer> sequence, Condition<Integer> condition) {
         this.condition = condition;
         this.sequence = sequence;
     }

@@ -3,8 +3,8 @@ package se.fredsberg.euler;
 import java.util.Arrays;
 import java.util.List;
 
-import se.fredsberg.euler.matcher.ListSumCondition;
-import se.fredsberg.euler.matcher.Condition;
+import se.fredsberg.euler.condition.Condition;
+import se.fredsberg.euler.condition.ListSumCondition;
 
 public class E009 {
 

@@ -5,7 +5,7 @@ import static org.fest.assertions.Assertions.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import se.fredsberg.euler.matcher.AnyCondition;
+import se.fredsberg.euler.condition.AnyCondition;
 
 public class AnyConditionTest {
 

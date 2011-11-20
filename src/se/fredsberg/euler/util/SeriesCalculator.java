@@ -1,6 +1,6 @@
 package se.fredsberg.euler.util;
 
-import se.fredsberg.euler.matcher.Condition;
+import se.fredsberg.euler.condition.Condition;
 import se.fredsberg.euler.sequence.Sequence;
 import se.fredsberg.euler.series.Series;
 

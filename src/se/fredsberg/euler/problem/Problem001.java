@@ -1,8 +1,8 @@
 package se.fredsberg.euler.problem;
 
-import se.fredsberg.euler.matcher.Condition;
-import se.fredsberg.euler.matcher.EvenDivisorCondition;
-import se.fredsberg.euler.matcher.AnyCondition;
+import se.fredsberg.euler.condition.AnyCondition;
+import se.fredsberg.euler.condition.Condition;
+import se.fredsberg.euler.condition.EvenDivisorCondition;
 import se.fredsberg.euler.sequence.FiniteIntegerSequence;
 import se.fredsberg.euler.sequence.FiniteSequence;
 import se.fredsberg.euler.series.ConditionedSeries;

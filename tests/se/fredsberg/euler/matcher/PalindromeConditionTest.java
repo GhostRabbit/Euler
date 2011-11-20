@@ -4,7 +4,7 @@ import static org.fest.assertions.Assertions.*;
 
 import org.testng.annotations.Test;
 
-import se.fredsberg.euler.matcher.PalindromeCondition;
+import se.fredsberg.euler.condition.PalindromeCondition;
 
 public class PalindromeConditionTest {
 

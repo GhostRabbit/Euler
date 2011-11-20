@@ -1,4 +1,4 @@
-package se.fredsberg.euler.matcher;
+package se.fredsberg.euler.condition;
 
 public class PalindromeCondition implements Condition<Integer> {
     

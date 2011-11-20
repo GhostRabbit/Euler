@@ -1,6 +1,6 @@
 package se.fredsberg.euler.problem;
 
-import se.fredsberg.euler.matcher.PalindromeCondition;
+import se.fredsberg.euler.condition.PalindromeCondition;
 import se.fredsberg.euler.sequence.ProductSequence;
 import se.fredsberg.euler.series.ConditionedSeries;
 import se.fredsberg.euler.series.MaxValueFoundInSequence;

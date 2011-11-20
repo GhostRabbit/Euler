@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 import org.testng.annotations.Test;
 
-import se.fredsberg.euler.matcher.ListSumCondition;
+import se.fredsberg.euler.condition.ListSumCondition;
 
 public class ListSumConditionTest {
 

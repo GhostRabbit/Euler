@@ -1,8 +1,8 @@
 package se.fredsberg.euler.problem;
 
-import se.fredsberg.euler.matcher.EvenCondition;
-import se.fredsberg.euler.matcher.LessThenCondition;
-import se.fredsberg.euler.matcher.Condition;
+import se.fredsberg.euler.condition.Condition;
+import se.fredsberg.euler.condition.EvenCondition;
+import se.fredsberg.euler.condition.LessThenCondition;
 import se.fredsberg.euler.sequence.FibonacciSequence;
 import se.fredsberg.euler.sequence.Sequence;
 import se.fredsberg.euler.series.ConditionedSeries;

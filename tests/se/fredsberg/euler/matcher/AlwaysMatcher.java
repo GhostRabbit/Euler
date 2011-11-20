@@ -1,6 +1,6 @@
 package se.fredsberg.euler.matcher;
 
-import se.fredsberg.euler.matcher.Condition;
+import se.fredsberg.euler.condition.Condition;
 
 public class AlwaysMatcher<T> implements Condition<T> {
 

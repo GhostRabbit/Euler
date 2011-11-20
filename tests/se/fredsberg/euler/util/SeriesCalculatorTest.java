@@ -8,7 +8,7 @@ import org.mockito.MockitoAnnotations;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import se.fredsberg.euler.matcher.Condition;
+import se.fredsberg.euler.condition.Condition;
 import se.fredsberg.euler.sequence.Sequence;
 import se.fredsberg.euler.series.Series;
 import se.fredsberg.euler.util.SeriesCalculator;
