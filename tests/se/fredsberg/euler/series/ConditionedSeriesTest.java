@@ -1,4 +1,4 @@
-package se.fredsberg.euler.processor;
+package se.fredsberg.euler.series;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
@@ -7,8 +7,8 @@ import static org.mockito.Mockito.*;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import se.fredsberg.euler.matcher.AlwaysMatcher;
-import se.fredsberg.euler.matcher.NeverMatcher;
+import se.fredsberg.euler.condition.AlwaysMatcher;
+import se.fredsberg.euler.condition.NeverMatcher;
 import se.fredsberg.euler.series.ConditionedSeries;
 import se.fredsberg.euler.series.Series;
 

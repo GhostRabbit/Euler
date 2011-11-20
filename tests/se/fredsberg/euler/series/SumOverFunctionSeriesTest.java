@@ -1,4 +1,4 @@
-package se.fredsberg.euler.processor;
+package se.fredsberg.euler.series;
 
 import static org.fest.assertions.Assertions.*;
 

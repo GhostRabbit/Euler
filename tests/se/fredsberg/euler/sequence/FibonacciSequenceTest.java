@@ -1,4 +1,4 @@
-package se.fredsberg.euler.generator;
+package se.fredsberg.euler.sequence;
 
 import static org.fest.assertions.Assertions.*;
 

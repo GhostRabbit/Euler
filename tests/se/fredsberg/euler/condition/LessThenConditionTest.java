@@ -1,4 +1,4 @@
-package se.fredsberg.euler.matcher;
+package se.fredsberg.euler.condition;
 
 import static org.fest.assertions.Assertions.*;
 

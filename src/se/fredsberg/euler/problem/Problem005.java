@@ -4,9 +4,10 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import se.fredsberg.euler.series.Series;
+import se.fredsberg.euler.sequence.ListSequence;
 import se.fredsberg.euler.series.ProductProcessor;
-import se.fredsberg.euler.util.IteratorLooper;
+import se.fredsberg.euler.series.Series;
+import se.fredsberg.euler.util.FiniteSeriesCalculator;
 import se.fredsberg.euler.util.PrimeFactors;
 
 public class Problem005 implements Problem {
@@ -22,11 +23,11 @@ public class Problem005 implements Problem {
     @Override
     public long solve() {
         List<Integer> primeFactors = getPrimeFactorsUpTo(20);
-        Series<Integer> processor = new ProductProcessor();
-        IteratorLooper<Integer> looper = new IteratorLooper<Integer>(primeFactors, processor);
-        looper.run();
+        Series<Integer> series = new ProductProcessor();
+        FiniteSeriesCalculator<Integer> looper2 = new FiniteSeriesCalculator<Integer>(new ListSequence<Integer>(primeFactors), series);
+        looper2.run();
         // Answer = 2 * 2 * 2 * 2 * 3 * 3 * 5 * 7 * 11 * 13 * 17 * 19
-        return processor.getResult();
+        return series.getResult();
     }
 
     private List<Integer> getPrimeFactorsUpTo(int upperInclusiveLimit) {
