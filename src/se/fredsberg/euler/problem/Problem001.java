@@ -2,7 +2,7 @@ package se.fredsberg.euler.problem;
 
 import se.fredsberg.euler.matcher.Condition;
 import se.fredsberg.euler.matcher.EvenDivisorCondition;
-import se.fredsberg.euler.matcher.OrCondition;
+import se.fredsberg.euler.matcher.AnyCondition;
 import se.fredsberg.euler.sequence.FiniteIntegerSequence;
 import se.fredsberg.euler.sequence.FiniteSequence;
 import se.fredsberg.euler.series.ConditionedSeries;
@@ -33,8 +33,8 @@ public class Problem001 implements Problem {
         return new ConditionedSeries<Integer>(isMultible, sum);
     }
 
-    private OrCondition<Integer> createMutipleOf3Or5Condition() {
-        return new OrCondition<Integer>().add(new EvenDivisorCondition(3)).add(new EvenDivisorCondition(5));
+    private AnyCondition<Integer> createMutipleOf3Or5Condition() {
+        return new AnyCondition<Integer>().add(new EvenDivisorCondition(3)).add(new EvenDivisorCondition(5));
     }
 
 }

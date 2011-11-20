@@ -2,8 +2,8 @@ package se.fredsberg.euler;
 
 import java.util.List;
 
+import se.fredsberg.euler.sequence.TriangleNumberSequence;
 import se.fredsberg.euler.util.PrimeFactors;
-import se.fredsberg.euler.util.TriangleNumberIterator;
 
 public class E012 {
 
@@ -34,7 +34,7 @@ public class E012 {
      */
 
     public static void main(String[] args) {
-      TriangleNumberIterator iterator = new TriangleNumberIterator();
+      TriangleNumberSequence iterator = new TriangleNumberSequence();
         while (true) {
             int number = iterator.next();
             if (getDivisorCount(number) > 500) {

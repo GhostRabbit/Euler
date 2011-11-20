@@ -1,9 +1,8 @@
-package se.fredsberg.euler.util;
+package se.fredsberg.euler.sequence;
 
-public class TriangleNumberIterator {
 
-    //TODO definitely a series
-    
+public class TriangleNumberSequence implements Sequence<Integer> {
+
     /*
      * The n:th Triangle number is the sum of 1..n.
      */
@@ -11,7 +10,8 @@ public class TriangleNumberIterator {
     int sum = 0;
     int i = 1;
 
-    public int next() {
+    @Override
+    public Integer next() {
         sum += i++;
         return sum;
     }

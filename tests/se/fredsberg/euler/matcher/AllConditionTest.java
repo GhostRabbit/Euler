@@ -5,15 +5,13 @@ import static org.fest.assertions.Assertions.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import se.fredsberg.euler.matcher.OrCondition;
+public class AllConditionTest {
 
-public class OrConditionTest {
-
-    private OrCondition<Integer> condition;
+    private AllCondition<Integer> condition;
 
     @BeforeMethod
     public void setup() {
-        condition = new OrCondition<Integer>();
+        condition = new AllCondition<Integer>();
     }
 
     @Test
@@ -23,12 +21,12 @@ public class OrConditionTest {
 
     @Test
     public void checkCasesOneFalseOneTrue() {
-        assertThat(condition.add(new NeverMatcher<Integer>()).add(new AlwaysMatcher<Integer>()).forfilledBy(1)).isTrue();
+        assertThat(condition.add(new NeverMatcher<Integer>()).add(new AlwaysMatcher<Integer>()).forfilledBy(1)).isFalse();
     }
 
     @Test
     public void checkCasesOneTrueOneFalse() {
-        assertThat(condition.add(new AlwaysMatcher<Integer>()).add(new NeverMatcher<Integer>()).forfilledBy(1)).isTrue();
+        assertThat(condition.add(new AlwaysMatcher<Integer>()).add(new NeverMatcher<Integer>()).forfilledBy(1)).isFalse();
     }
 
     @Test
