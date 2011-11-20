@@ -12,20 +12,20 @@ public class ProductSequenceTest {
 
     @Test
     public void next() {
-        ProductSequence productGenerator = new ProductSequence(10, 12);
-        assertThat(productGenerator.next()).isEqualTo(100);
-        assertThat(productGenerator.next()).isEqualTo(110);
-        assertThat(productGenerator.next()).isEqualTo(120);
-        assertThat(productGenerator.next()).isEqualTo(121);
-        assertThat(productGenerator.next()).isEqualTo(132);
-        assertThat(productGenerator.next()).isEqualTo(144);
+        ProductSequence sequence = new ProductSequence(10, 12);
+        assertThat(sequence.next()).isEqualTo(100);
+        assertThat(sequence.next()).isEqualTo(110);
+        assertThat(sequence.next()).isEqualTo(120);
+        assertThat(sequence.next()).isEqualTo(121);
+        assertThat(sequence.next()).isEqualTo(132);
+        assertThat(sequence.next()).isEqualTo(144);
     }
 
     @Test(expectedExceptions = NoSuchElementException.class)
     public void tooFar() {
-        ProductSequence productGenerator = new ProductSequence(10, 10);
-        productGenerator.next();
-        productGenerator.next();
+        ProductSequence sequence = new ProductSequence(10, 10);
+        sequence.next();
+        sequence.next();
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)

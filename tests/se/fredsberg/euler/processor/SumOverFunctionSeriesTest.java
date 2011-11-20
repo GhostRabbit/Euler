@@ -18,17 +18,17 @@ public class SumOverFunctionSeriesTest {
 
     @Test
     public void processAFew() {
-        SumOverFunctionSeries processor = new SumOverFunctionSeries(new Function<Integer>() {
+        SumOverFunctionSeries series = new SumOverFunctionSeries(new Function<Integer>() {
             
             @Override
             public Integer calculate(Integer t) {
                 return t * 2;
             }
         });
-        processor.process(2);
-        assertThat(processor.getResult()).isEqualTo(4);
-        processor.process(5);
-        assertThat(processor.getResult()).isEqualTo(14);
+        series.process(2);
+        assertThat(series.getResult()).isEqualTo(4);
+        series.process(5);
+        assertThat(series.getResult()).isEqualTo(14);
     }
     
 

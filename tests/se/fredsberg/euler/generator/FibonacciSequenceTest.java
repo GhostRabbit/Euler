@@ -10,16 +10,16 @@ public class FibonacciSequenceTest {
 
     @Test
     public void fibonacciSequence() {
-        FibonacciSequence generator = new FibonacciSequence();
-        assertThat(generator.next()).isEqualTo(1);
-        assertThat(generator.next()).isEqualTo(2);
-        assertThat(generator.next()).isEqualTo(3);
-        assertThat(generator.next()).isEqualTo(5);
-        assertThat(generator.next()).isEqualTo(8);
-        assertThat(generator.next()).isEqualTo(13);
-        assertThat(generator.next()).isEqualTo(21);
-        assertThat(generator.next()).isEqualTo(34);
-        assertThat(generator.next()).isEqualTo(55);
-        assertThat(generator.next()).isEqualTo(89);
+        FibonacciSequence sequence = new FibonacciSequence();
+        assertThat(sequence.next()).isEqualTo(1);
+        assertThat(sequence.next()).isEqualTo(2);
+        assertThat(sequence.next()).isEqualTo(3);
+        assertThat(sequence.next()).isEqualTo(5);
+        assertThat(sequence.next()).isEqualTo(8);
+        assertThat(sequence.next()).isEqualTo(13);
+        assertThat(sequence.next()).isEqualTo(21);
+        assertThat(sequence.next()).isEqualTo(34);
+        assertThat(sequence.next()).isEqualTo(55);
+        assertThat(sequence.next()).isEqualTo(89);
     }
 }

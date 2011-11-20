@@ -15,32 +15,32 @@ import se.fredsberg.euler.util.FiniteSeriesCalculator;
 public class FiniteSeriesCalculatorTest {
 
     @Mock
-    FiniteSequence<Integer> generator;
+    FiniteSequence<Integer> sequence;
     @Mock
-    Series<Integer> processor;
-    private FiniteSeriesCalculator<Integer> looper;
+    Series<Integer> series;
+    private FiniteSeriesCalculator<Integer> calculator;
 
     @BeforeMethod
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        looper = new FiniteSeriesCalculator<Integer>(generator, processor);
+        calculator = new FiniteSeriesCalculator<Integer>(sequence, series);
     }
 
     @Test
     public void noLoops() {
-        when(generator.hasNext()).thenReturn(false);
-        looper.run();
-        verify(generator).hasNext();
-        verifyNoMoreInteractions(processor);
+        when(sequence.hasNext()).thenReturn(false);
+        calculator.run();
+        verify(sequence).hasNext();
+        verifyNoMoreInteractions(series);
     }
 
     @Test
     public void twoLoops() {
-        when(generator.hasNext()).thenReturn(true).thenReturn(true).thenReturn(false);
-        looper.run();
-        verify(generator, times(3)).hasNext();
-        verify(generator, times(2)).next();
-        verify(processor, times(2)).process(anyInt());
+        when(sequence.hasNext()).thenReturn(true).thenReturn(true).thenReturn(false);
+        calculator.run();
+        verify(sequence, times(3)).hasNext();
+        verify(sequence, times(2)).next();
+        verify(series, times(2)).process(anyInt());
     }
 
 }

@@ -9,30 +9,30 @@ import se.fredsberg.euler.matcher.OrCondition;
 
 public class OrConditionTest {
 
-    private OrCondition<Integer> matcher;
+    private OrCondition<Integer> condition;
 
     @BeforeMethod
     public void setup() {
-        matcher = new OrCondition<Integer>();
+        condition = new OrCondition<Integer>();
     }
 
     @Test
     public void checkCasesBothTrue() {
-        assertThat(matcher.add(new AlwaysMatcher<Integer>()).add(new AlwaysMatcher<Integer>()).forfilledBy(1)).isTrue();
+        assertThat(condition.add(new AlwaysMatcher<Integer>()).add(new AlwaysMatcher<Integer>()).forfilledBy(1)).isTrue();
     }
 
     @Test
     public void checkCasesOneFalseOneTrue() {
-        assertThat(matcher.add(new NeverMatcher<Integer>()).add(new AlwaysMatcher<Integer>()).forfilledBy(1)).isTrue();
+        assertThat(condition.add(new NeverMatcher<Integer>()).add(new AlwaysMatcher<Integer>()).forfilledBy(1)).isTrue();
     }
 
     @Test
     public void checkCasesOneTrueOneFalse() {
-        assertThat(matcher.add(new AlwaysMatcher<Integer>()).add(new NeverMatcher<Integer>()).forfilledBy(1)).isTrue();
+        assertThat(condition.add(new AlwaysMatcher<Integer>()).add(new NeverMatcher<Integer>()).forfilledBy(1)).isTrue();
     }
 
     @Test
     public void checkCasesBothFalse() {
-        assertThat(matcher.add(new NeverMatcher<Integer>()).add(new NeverMatcher<Integer>()).forfilledBy(1)).isFalse();
+        assertThat(condition.add(new NeverMatcher<Integer>()).add(new NeverMatcher<Integer>()).forfilledBy(1)).isFalse();
     }
 }
