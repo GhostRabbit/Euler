@@ -1,18 +1,17 @@
 package se.fredsberg.euler.processor;
 
+import se.fredsberg.euler.function.Function;
 
-public class SumProcessor implements Processor<Integer> {
 
-    Integer sum = 0;
+public class SumProcessor extends SumOfFunctionProcessor{
 
-    @Override
-    public void process(Integer i) {
-        sum += i;
+    public SumProcessor() {
+        super(new Function<Integer>() {
+
+            @Override
+            public Integer calculate(Integer t) {
+                return t;
+            }
+        });
     }
-
-    @Override
-    public Integer getResult() {
-        return sum;
-    }
-    
 }

@@ -4,13 +4,11 @@ import static org.fest.assertions.Assertions.*;
 
 import org.testng.annotations.Test;
 
-import se.fredsberg.euler.problem.Problem010;
 
-
-public class Problem010Test {
+public class Problem006Test {
 
     @Test
     public void solve() {
-        assertThat(new Problem010().solve()).isEqualTo(142913828922L);
+        assertThat(new Problem006().solve()).isEqualTo(25164150);
     }
 }

@@ -16,6 +16,8 @@ public class Problem010 implements Problem {
      * Breakpoint and x*x are tricks taken from the paper linked from problem.
      * 
      * 2 is handled special by starting sum at 2, and skipping forward with steps of 3
+     * 
+     * It is possible to fold the array around 2 by calculating indexes, but I did not gain any performance by doing so.
      */
     
     @Override
