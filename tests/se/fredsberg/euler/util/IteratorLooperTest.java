@@ -9,13 +9,13 @@ import org.mockito.MockitoAnnotations;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import se.fredsberg.euler.processor.Processor;
+import se.fredsberg.euler.series.Series;
 import se.fredsberg.euler.util.IteratorLooper;
 
 public class IteratorLooperTest {
 
     @Mock
-    Processor<Integer> processor;
+    Series<Integer> series;
 
     @BeforeMethod
     public void setUp() {
@@ -24,14 +24,14 @@ public class IteratorLooperTest {
 
     @Test
     public void emptyList() {
-        new IteratorLooper<Integer>(Collections.<Integer> emptyList(), processor).run();
-        verifyNoMoreInteractions(processor);
+        new IteratorLooper<Integer>(Collections.<Integer> emptyList(), series).run();
+        verifyNoMoreInteractions(series);
     }
 
     @Test
     public void oneList() {
-        new IteratorLooper<Integer>(Collections.singleton(1), processor).run();
-        verify(processor).process(1);
+        new IteratorLooper<Integer>(Collections.singleton(1), series).run();
+        verify(series).process(1);
     }
 
 }

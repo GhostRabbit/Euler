@@ -1,11 +1,11 @@
 package se.fredsberg.euler.matcher;
 
-import se.fredsberg.euler.matcher.Matcher;
+import se.fredsberg.euler.matcher.Condition;
 
-public class NeverMatcher<T> implements Matcher<T> {
+public class NeverMatcher<T> implements Condition<T> {
 
     @Override
-    public boolean matches(T arg) {
+    public boolean forfilledBy(T arg) {
         return false;
     }
 

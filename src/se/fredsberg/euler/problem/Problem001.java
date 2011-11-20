@@ -1,33 +1,40 @@
 package se.fredsberg.euler.problem;
 
-import se.fredsberg.euler.generator.LimitedGenerator;
-import se.fredsberg.euler.generator.LimitedNumberGenerator;
-import se.fredsberg.euler.matcher.EvenDivisorMatcher;
-import se.fredsberg.euler.matcher.Matcher;
-import se.fredsberg.euler.matcher.OrMatcher;
-import se.fredsberg.euler.processor.ConditionedProcessor;
-import se.fredsberg.euler.processor.Processor;
-import se.fredsberg.euler.processor.SumProcessor;
-import se.fredsberg.euler.util.LimitedGeneratorLooper;
+import se.fredsberg.euler.matcher.Condition;
+import se.fredsberg.euler.matcher.EvenDivisorCondition;
+import se.fredsberg.euler.matcher.OrCondition;
+import se.fredsberg.euler.sequence.FiniteIntegerSequence;
+import se.fredsberg.euler.sequence.FiniteSequence;
+import se.fredsberg.euler.series.ConditionedSeries;
+import se.fredsberg.euler.series.Series;
+import se.fredsberg.euler.series.SumSeries;
+import se.fredsberg.euler.util.FiniteSeriesCalculator;
 
 public class Problem001 implements Problem {
 
+    /**
+     * If we list all the natural numbers below 10 that are multiples of 3 or 5,
+     * we get 3, 5, 6 and 9. The sum of these multiples is 23.
+     * 
+     * Find the sum of all the multiples of 3 or 5 below 1000.
+     */
+
     @Override
     public long solve() {
-        Processor<Integer> sumOfMultiples = createProcessor();
-        LimitedGenerator<Integer> naturalNumbers = new LimitedNumberGenerator(1, 999);
-        new LimitedGeneratorLooper<Integer>(naturalNumbers, sumOfMultiples).run();
+        Series<Integer> sumOfMultiples = createSeriesOfMultiples();
+        FiniteSequence<Integer> naturalNumbers = new FiniteIntegerSequence(1, 999);
+        new FiniteSeriesCalculator<Integer>(naturalNumbers, sumOfMultiples).run();
         return sumOfMultiples.getResult();
     }
 
-    private Processor<Integer> createProcessor() {
-        Matcher<Integer> isMultible = createMultipleMatcher();
-        Processor<Integer> sum = new SumProcessor();
-        return new ConditionedProcessor<Integer>(isMultible, sum);
+    private Series<Integer> createSeriesOfMultiples() {
+        Condition<Integer> isMultible = createMutipleOf3Or5Condition();
+        Series<Integer> sum = new SumSeries();
+        return new ConditionedSeries<Integer>(isMultible, sum);
     }
 
-    private OrMatcher<Integer> createMultipleMatcher() {
-        return new OrMatcher<Integer>().add(new EvenDivisorMatcher(3)).add(new EvenDivisorMatcher(5));
+    private OrCondition<Integer> createMutipleOf3Or5Condition() {
+        return new OrCondition<Integer>().add(new EvenDivisorCondition(3)).add(new EvenDivisorCondition(5));
     }
 
 }

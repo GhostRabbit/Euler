@@ -3,8 +3,8 @@ package se.fredsberg.euler;
 import java.util.Arrays;
 import java.util.List;
 
-import se.fredsberg.euler.matcher.ListSumMatcher;
-import se.fredsberg.euler.matcher.Matcher;
+import se.fredsberg.euler.matcher.ListSumCondition;
+import se.fredsberg.euler.matcher.Condition;
 
 public class E009 {
 
@@ -19,17 +19,17 @@ public class E009 {
      */
 
     public static void main(String[] args) {
-        Matcher<List<Integer>> matcher = new ListSumMatcher(1000);
+        Condition<List<Integer>> matcher = new ListSumCondition(1000);
         List<Integer> triplet = new E009().findTriplets(matcher);
         System.out.println(triplet.get(0) * triplet.get(1) * triplet.get(2));
     }
 
-    private List<Integer> findTriplets(Matcher<List<Integer>> matcher) {
+    private List<Integer> findTriplets(Condition<List<Integer>> matcher) {
         int c = 4;
         while (c++ < 1000) {
             for (int a = 1; a < c; a++) {
                 List<Integer> triplet = createTriplet(c, a);
-                if (triplet != null && matcher.matches(triplet)) {
+                if (triplet != null && matcher.forfilledBy(triplet)) {
                     return triplet;
                 }
             }

@@ -2,7 +2,7 @@ package se.fredsberg.euler.util;
 
 public class TriangleNumberIterator {
 
-    //TODO definitely a generator
+    //TODO definitely a series
     
     /*
      * The n:th Triangle number is the sum of 1..n.

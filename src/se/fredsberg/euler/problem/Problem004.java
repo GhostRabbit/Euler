@@ -1,10 +1,10 @@
 package se.fredsberg.euler.problem;
 
-import se.fredsberg.euler.generator.ProductGenerator;
-import se.fredsberg.euler.matcher.PalindromeMatcher;
-import se.fredsberg.euler.processor.ConditionedProcessor;
-import se.fredsberg.euler.processor.MaxProcessor;
-import se.fredsberg.euler.util.LimitedGeneratorLooper;
+import se.fredsberg.euler.matcher.PalindromeCondition;
+import se.fredsberg.euler.sequence.ProductSequence;
+import se.fredsberg.euler.series.ConditionedSeries;
+import se.fredsberg.euler.series.MaxValueFoundInSequence;
+import se.fredsberg.euler.util.FiniteSeriesCalculator;
 
 public class Problem004 implements Problem {
 
@@ -17,14 +17,14 @@ public class Problem004 implements Problem {
 
     @Override
     public long solve() {
-        ConditionedProcessor<Integer> largestPalindoneFinder = largestPalindoneFinder();
-        new LimitedGeneratorLooper<Integer>(new ProductGenerator(100, 999), largestPalindoneFinder).run();
+        ConditionedSeries<Integer> largestPalindoneFinder = largestPalindoneFinder();
+        new FiniteSeriesCalculator<Integer>(new ProductSequence(100, 999), largestPalindoneFinder).run();
         return largestPalindoneFinder.getResult();
     }
     
-    private static ConditionedProcessor<Integer> largestPalindoneFinder() {
-        MaxProcessor largestPalindrome = new MaxProcessor();
-        PalindromeMatcher isPalindrome = new PalindromeMatcher();
-        return new ConditionedProcessor<Integer>(isPalindrome, largestPalindrome);
+    private static ConditionedSeries<Integer> largestPalindoneFinder() {
+        MaxValueFoundInSequence largestPalindrome = new MaxValueFoundInSequence();
+        PalindromeCondition isPalindrome = new PalindromeCondition();
+        return new ConditionedSeries<Integer>(isPalindrome, largestPalindrome);
     }
 }

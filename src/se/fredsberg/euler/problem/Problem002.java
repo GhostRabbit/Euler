@@ -1,14 +1,14 @@
 package se.fredsberg.euler.problem;
 
-import se.fredsberg.euler.generator.FibonacciGenerator;
-import se.fredsberg.euler.generator.Generator;
-import se.fredsberg.euler.matcher.EvenMatcher;
-import se.fredsberg.euler.matcher.LessThenMatcher;
-import se.fredsberg.euler.matcher.Matcher;
-import se.fredsberg.euler.processor.ConditionedProcessor;
-import se.fredsberg.euler.processor.Processor;
-import se.fredsberg.euler.processor.SumProcessor;
-import se.fredsberg.euler.util.GeneratorLooper;
+import se.fredsberg.euler.matcher.EvenCondition;
+import se.fredsberg.euler.matcher.LessThenCondition;
+import se.fredsberg.euler.matcher.Condition;
+import se.fredsberg.euler.sequence.FibonacciSequence;
+import se.fredsberg.euler.sequence.Sequence;
+import se.fredsberg.euler.series.ConditionedSeries;
+import se.fredsberg.euler.series.Series;
+import se.fredsberg.euler.series.SumSeries;
+import se.fredsberg.euler.util.SeriesCalculator;
 
 public class Problem002 implements Problem {
     
@@ -24,11 +24,10 @@ public class Problem002 implements Problem {
 
     @Override
     public long solve() {
-        // TODO Auto-generated method stub
-        Generator<Integer> fibonaccies = new FibonacciGenerator();
-        Processor<Integer> sumOfEvens = new ConditionedProcessor<Integer>(new EvenMatcher(), new SumProcessor());
-        Matcher<Integer> lessThen4million = new LessThenMatcher(4000000);
-        new GeneratorLooper<Integer>(fibonaccies, lessThen4million, sumOfEvens).run();
+        Sequence<Integer> fibonaccies = new FibonacciSequence();
+        Series<Integer> sumOfEvens = new ConditionedSeries<Integer>(new EvenCondition(), new SumSeries());
+        Condition<Integer> lessThen4million = new LessThenCondition(4000000);
+        new SeriesCalculator<Integer>(fibonaccies, lessThen4million, sumOfEvens).run();
         return sumOfEvens.getResult();
     }
 }

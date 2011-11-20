@@ -4,7 +4,7 @@ import static org.fest.assertions.Assertions.*;
 
 import org.testng.annotations.Test;
 
-import se.fredsberg.euler.processor.ProductProcessor;
+import se.fredsberg.euler.series.ProductProcessor;
 
 public class ProductProcessorTest {
 

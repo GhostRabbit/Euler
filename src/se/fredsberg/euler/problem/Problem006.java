@@ -1,13 +1,12 @@
 package se.fredsberg.euler.problem;
 
-import se.fredsberg.euler.function.Function;
 import se.fredsberg.euler.function.Square;
-import se.fredsberg.euler.generator.LimitedGenerator;
-import se.fredsberg.euler.generator.LimitedNumberGenerator;
-import se.fredsberg.euler.processor.Processor;
-import se.fredsberg.euler.processor.SumOfFunctionProcessor;
-import se.fredsberg.euler.processor.SumProcessor;
-import se.fredsberg.euler.util.LimitedGeneratorLooper;
+import se.fredsberg.euler.sequence.FiniteIntegerSequence;
+import se.fredsberg.euler.sequence.FiniteSequence;
+import se.fredsberg.euler.series.Series;
+import se.fredsberg.euler.series.SumOverFunctionSeries;
+import se.fredsberg.euler.series.SumSeries;
+import se.fredsberg.euler.util.FiniteSeriesCalculator;
 
 
 public class Problem006 implements Problem {
@@ -35,11 +34,11 @@ public class Problem006 implements Problem {
     }
     
     long sumOfSquares(int from, int to) {
-        LimitedGenerator<Integer> generator = new LimitedNumberGenerator(from, to);
-        Processor<Integer> processor = new SumOfFunctionProcessor(new Square());
-        LimitedGeneratorLooper<Integer> looper = new LimitedGeneratorLooper<Integer>(generator, processor);
+        FiniteSequence<Integer> generator = new FiniteIntegerSequence(from, to);
+        Series<Integer> series = new SumOverFunctionSeries(new Square());
+        FiniteSeriesCalculator<Integer> looper = new FiniteSeriesCalculator<Integer>(generator, series);
         looper.run();
-        return processor.getResult();
+        return series.getResult();
     }
 
     long squareOfSum(int from, int to) {
@@ -48,10 +47,9 @@ public class Problem006 implements Problem {
     }
     
     private long sumOf(int from, int to) {
-        LimitedGenerator<Integer> generator = new LimitedNumberGenerator(from, to);
-        Processor<Integer> processor = new SumProcessor();
-        LimitedGeneratorLooper<Integer> looper = new LimitedGeneratorLooper<Integer>(generator, processor);
-        looper.run();
-        return processor.getResult();
+        FiniteSequence<Integer> generator = new FiniteIntegerSequence(from, to);
+        Series<Integer> series = new SumSeries();
+        new FiniteSeriesCalculator<Integer>(generator, series).run();
+        return series.getResult();
     }
 }

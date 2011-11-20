@@ -1,22 +1,22 @@
 package se.fredsberg.euler.util;
 
-import se.fredsberg.euler.generator.Generator;
-import se.fredsberg.euler.matcher.Matcher;
+import se.fredsberg.euler.matcher.Condition;
+import se.fredsberg.euler.sequence.Sequence;
 
 public class FindLooper {
 
-    private final Generator<Integer> generator;
-    private final Matcher<Integer> matcher;
+    private final Condition<Integer> condition;
+    private final Sequence<Integer> sequence;
 
-    public FindLooper(Matcher<Integer> matcher, Generator<Integer> generator) {
-        this.matcher = matcher;
-        this.generator = generator;
+    public FindLooper(Condition<Integer> condition, Sequence<Integer> sequence) {
+        this.condition = condition;
+        this.sequence = sequence;
     }
 
     public Integer finds() {
         while (true) {
-            Integer x = generator.next();
-            if (matcher.matches(x)) {
+            Integer x = sequence.next();
+            if (condition.forfilledBy(x)) {
                 return x;
             }
         }
