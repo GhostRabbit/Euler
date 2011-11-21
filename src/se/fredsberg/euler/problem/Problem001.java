@@ -3,7 +3,7 @@ package se.fredsberg.euler.problem;
 import se.fredsberg.euler.condition.AnyCondition;
 import se.fredsberg.euler.condition.Condition;
 import se.fredsberg.euler.condition.EvenDivisorCondition;
-import se.fredsberg.euler.sequence.FiniteIntegerSequence;
+import se.fredsberg.euler.sequence.FiniteDiscreteSequence;
 import se.fredsberg.euler.series.ConditionedSeries;
 import se.fredsberg.euler.series.Series;
 import se.fredsberg.euler.series.SumSeries;
@@ -20,23 +20,23 @@ public class Problem001 implements Problem {
 
     @Override
     public long solve() {
-        Series<Integer> sumOfMultiples = createSeriesOfMultiples();
-        new FiniteSequenceCalculator<Integer>(numbersBelow1000(), sumOfMultiples).calculateSeries();
+        Series<Long> sumOfMultiples = createSeriesOfMultiples();
+        new FiniteSequenceCalculator<Long>(numbersBelow1000(), sumOfMultiples).calculateSeries();
         return sumOfMultiples.getResult();
     }
 
-    private FiniteIntegerSequence numbersBelow1000() {
-        return new FiniteIntegerSequence(999);
+    private FiniteDiscreteSequence numbersBelow1000() {
+        return new FiniteDiscreteSequence(999);
     }
 
-    private Series<Integer> createSeriesOfMultiples() {
-        Condition<Integer> isMultible = createMutipleOf3Or5Condition();
-        Series<Integer> sum = new SumSeries();
-        return new ConditionedSeries<Integer>(isMultible, sum);
+    private Series<Long> createSeriesOfMultiples() {
+        Condition<Long> isMultible = createMutipleOf3Or5Condition();
+        Series<Long> sum = new SumSeries();
+        return new ConditionedSeries<Long>(isMultible, sum);
     }
 
-    private AnyCondition<Integer> createMutipleOf3Or5Condition() {
-        return new AnyCondition<Integer>().add(new EvenDivisorCondition(3)).add(new EvenDivisorCondition(5));
+    private AnyCondition<Long> createMutipleOf3Or5Condition() {
+        return new AnyCondition<Long>().add(new EvenDivisorCondition(3L)).add(new EvenDivisorCondition(5L));
     }
 
 }

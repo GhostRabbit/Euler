@@ -17,11 +17,11 @@ public class SumSeriesTest {
     @Test
     public void sumUpSomeNumbers() {
         SumSeries summerizer = new SumSeries();
-        summerizer.process(1);
+        summerizer.process(1L);
         assertThat(summerizer.getResult()).isEqualTo(1);
-        summerizer.process(2);
+        summerizer.process(2L);
         assertThat(summerizer.getResult()).isEqualTo(3);
-        summerizer.process(-3);
+        summerizer.process(-3L);
         assertThat(summerizer.getResult()).isEqualTo(0);
     }
 

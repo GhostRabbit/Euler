@@ -4,11 +4,12 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
+import se.fredsberg.euler.sequence.FiniteSequence;
 import se.fredsberg.euler.sequence.ListSequence;
+import se.fredsberg.euler.sequence.PrimeFactorSequence;
 import se.fredsberg.euler.series.ProductSeries;
 import se.fredsberg.euler.series.Series;
 import se.fredsberg.euler.util.FiniteSequenceCalculator;
-import se.fredsberg.euler.util.PrimeFactors;
 
 public class Problem005 implements Problem {
 
@@ -22,27 +23,27 @@ public class Problem005 implements Problem {
 
     @Override
     public long solve() {
-        List<Integer> primeFactors = getPrimeFactorsUpTo(20);
-        Series<Integer> series = new ProductSeries();
-        FiniteSequenceCalculator<Integer> looper2 = new FiniteSequenceCalculator<Integer>(new ListSequence<Integer>(primeFactors), series);
-        looper2.calculateSeries();
+        List<Long> primeFactors = getAllPrimeFactorsUpTo(20);
+        Series<Long> series = new ProductSeries();
+        FiniteSequenceCalculator<Long> looper = new FiniteSequenceCalculator<Long>(new ListSequence<Long>(primeFactors), series);
+        looper.calculateSeries();
         // Answer = 2 * 2 * 2 * 2 * 3 * 3 * 5 * 7 * 11 * 13 * 17 * 19
         return series.getResult();
     }
 
-    private List<Integer> getPrimeFactorsUpTo(int upperInclusiveLimit) {
-        List<Integer> result = new LinkedList<Integer>();
-        for (int i = 2; i <= upperInclusiveLimit; i++) {
-            List<Integer> factors = PrimeFactors.factorize(i);
-            result.addAll(notIn(factors, result));
+    private List<Long> getAllPrimeFactorsUpTo(int upperInclusiveLimit) {
+        List<Long> result = new LinkedList<Long>();
+        for (long i = 2; i <= upperInclusiveLimit; i++) {
+            result.addAll(notIn(new PrimeFactorSequence(i), result));
         }
         return result;
     }
 
-    private Collection<? extends Integer> notIn(List<Integer> factors, List<Integer> result) {
-        List<Integer> copy = new LinkedList<Integer>(result);
-        List<Integer> toAdd = new LinkedList<Integer>();
-        for (Integer x : factors) {
+    private Collection<? extends Long> notIn(FiniteSequence<Long> factors, List<Long> result) {
+        List<Long> copy = new LinkedList<Long>(result);
+        List<Long> toAdd = new LinkedList<Long>();
+        while (factors.hasNext()) {
+            Long x = factors.next();
             if (!copy.remove(x)) {
                 toAdd.add(x);
             }

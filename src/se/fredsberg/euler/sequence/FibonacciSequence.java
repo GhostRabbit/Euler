@@ -3,29 +3,29 @@ package se.fredsberg.euler.sequence;
 import java.util.Stack;
 
 
-public class FibonacciSequence implements Sequence<Integer> {
+public class FibonacciSequence implements Sequence<Long> {
 
     // To hold the two last numbers to add
-    private Stack<Integer> latestPair;
+    private Stack<Long> latestPair;
 
     public FibonacciSequence() {
-        latestPair = new Stack<Integer>();
+        latestPair = new Stack<Long>();
     }
 
     @Override
-    public Integer next() {
-        int next = calculateNext();
+    public Long next() {
+        long next = calculateNext();
         latestPair.add(next); // The new second
         return next;
     }
 
-    private int calculateNext() {
+    private long calculateNext() {
         if (latestPair.size() < 2) {
             // The first two values are special
             return latestPair.size() + 1;
         }
-        int second = latestPair.pop();
-        int first = latestPair.pop();
+        long second = latestPair.pop();
+        long first = latestPair.pop();
         latestPair.add(second); // The new first
         return first + second;
     }

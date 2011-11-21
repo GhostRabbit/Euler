@@ -1,9 +1,9 @@
 package se.fredsberg.euler.function;
 
-public class Square implements Function<Integer> {
+public class Square implements Function<Long> {
 
     @Override
-    public Integer calculate(Integer t) {
+    public Long calculate(Long t) {
         return  t * t;
     }
 

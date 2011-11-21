@@ -2,18 +2,18 @@ package se.fredsberg.euler.sequence;
 
 import java.util.NoSuchElementException;
 
-public class FiniteIntegerSequence implements FiniteSequence<Integer> {
+public class FiniteDiscreteSequence implements FiniteSequence<Long> {
     
-    private int current;
+    private long current;
     private final int upperInclusive;
 
-    public FiniteIntegerSequence(int upperInclusiveLimit) {
+    public FiniteDiscreteSequence(int upperInclusiveLimit) {
         this.current = 1;
         this.upperInclusive = upperInclusiveLimit;
     }
      
     @Override
-    public Integer next() {
+    public Long next() {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }

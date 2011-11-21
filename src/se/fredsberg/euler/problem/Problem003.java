@@ -1,8 +1,7 @@
 package se.fredsberg.euler.problem;
 
-import java.util.List;
-
-import se.fredsberg.euler.util.PrimeFactors;
+import se.fredsberg.euler.sequence.FiniteSequence;
+import se.fredsberg.euler.sequence.PrimeFactorSequence;
 
 public class Problem003 implements Problem {
     
@@ -14,9 +13,12 @@ public class Problem003 implements Problem {
 
     @Override
     public long solve() {
-        List<Integer> primeFactors = PrimeFactors.factorize(600851475143L);
-        Integer largestPrimeFactor = primeFactors.get(primeFactors.size() - 1);
-        return largestPrimeFactor;
+        FiniteSequence<Long> sequence = new PrimeFactorSequence(600851475143L);
+        long lastFactor;
+        do {
+            lastFactor = sequence.next();
+        } while (sequence.hasNext());
+        return lastFactor;
     }
 
 }

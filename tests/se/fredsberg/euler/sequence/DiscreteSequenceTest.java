@@ -4,13 +4,13 @@ import static org.fest.assertions.Assertions.*;
 
 import org.testng.annotations.Test;
 
-import se.fredsberg.euler.sequence.IntegerSequence;
+import se.fredsberg.euler.sequence.DiscreteSequence;
 
-public class IntegerSequenceTest {
+public class DiscreteSequenceTest {
 
     @Test
     public void testNaturalNumberSequence() {
-        IntegerSequence sequence = new IntegerSequence();
+        DiscreteSequence sequence = new DiscreteSequence();
         assertThat(sequence.next()).isEqualTo(0);
         assertThat(sequence.next()).isEqualTo(1);
         assertThat(sequence.next()).isEqualTo(2);

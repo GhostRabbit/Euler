@@ -18,17 +18,17 @@ public class EvenConditionTest {
 
     @Test
     public void forfilledByEvenNumbers() {
-        assertThat(condition.forfilledBy(2)).isTrue();
-        assertThat(condition.forfilledBy(4)).isTrue();
-        assertThat(condition.forfilledBy(0)).isTrue();
-        assertThat(condition.forfilledBy(-2)).isTrue();
+        assertThat(condition.forfilledBy(2L)).isTrue();
+        assertThat(condition.forfilledBy(4L)).isTrue();
+        assertThat(condition.forfilledBy(0L)).isTrue();
+        assertThat(condition.forfilledBy(-2L)).isTrue();
     }
 
     @Test
     public void doesNotMatchUnevenNumbers() {
-        assertThat(condition.forfilledBy(1)).isFalse();
-        assertThat(condition.forfilledBy(3)).isFalse();
-        assertThat(condition.forfilledBy(-1)).isFalse();
+        assertThat(condition.forfilledBy(1L)).isFalse();
+        assertThat(condition.forfilledBy(3L)).isFalse();
+        assertThat(condition.forfilledBy(-1L)).isFalse();
     }
 
 }

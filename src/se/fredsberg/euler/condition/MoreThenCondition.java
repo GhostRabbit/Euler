@@ -1,6 +1,6 @@
 package se.fredsberg.euler.condition;
 
-public class MoreThenCondition implements Condition<Integer> {
+public class MoreThenCondition implements Condition<Long> {
 
     private final int limit;
 
@@ -9,7 +9,7 @@ public class MoreThenCondition implements Condition<Integer> {
     }
 
     @Override
-    public boolean forfilledBy(Integer x) {
+    public boolean forfilledBy(Long x) {
         return x > limit;
     }
 

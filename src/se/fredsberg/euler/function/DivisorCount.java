@@ -1,23 +1,23 @@
 package se.fredsberg.euler.function;
 
-import java.util.List;
+import se.fredsberg.euler.sequence.FiniteSequence;
+import se.fredsberg.euler.sequence.PrimeFactorSequence;
 
-import se.fredsberg.euler.util.PrimeFactors;
-
-public class DivisorCount implements Function<Integer> {
+public class DivisorCount implements Function<Long> {
 
     @Override
-    public Integer calculate(Integer x) {
-        List<Integer> factors = PrimeFactors.factorize(x);
+    public Long calculate(Long x) {
+        FiniteSequence<Long> sequence = new PrimeFactorSequence(x); 
         int count = 0;
-        int totalCount = 1;
-        int lastFactor = 0;
-        for (int f : factors) {
-            if (lastFactor == f) {
+        long totalCount = 1;
+        long lastFactor = 0;
+        while (sequence.hasNext()) {
+            long primeFactor = sequence.next();
+            if (lastFactor == primeFactor) {
                 count++;
             } else {
                 totalCount *= (count + 1);
-                lastFactor = f;
+                lastFactor = primeFactor;
                 count = 1;
             }
         }

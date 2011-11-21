@@ -11,8 +11,8 @@ public class EvenDivisorConditionTest {
     @Test
     public void aCheckedSumIgnoresCertainValues() {
         EvenDivisorCondition condition = new EvenDivisorCondition(3);
-        assertThat(condition.forfilledBy(2)).isFalse();
-        assertThat(condition.forfilledBy(3)).isTrue();
-        assertThat(condition.forfilledBy(9)).isTrue();
+        assertThat(condition.forfilledBy(2L)).isFalse();
+        assertThat(condition.forfilledBy(3L)).isTrue();
+        assertThat(condition.forfilledBy(9L)).isTrue();
     }
 }

@@ -11,9 +11,9 @@ public class LessThenConditionTest {
     @Test
     public void limitShouldBeStrict() {
         LessThenCondition condition = new LessThenCondition(5);
-        assertThat(condition.forfilledBy(3)).isTrue();
-        assertThat(condition.forfilledBy(4)).isTrue();
-        assertThat(condition.forfilledBy(5)).isFalse();
-        assertThat(condition.forfilledBy(6)).isFalse();
+        assertThat(condition.forfilledBy(3L)).isTrue();
+        assertThat(condition.forfilledBy(4L)).isTrue();
+        assertThat(condition.forfilledBy(5L)).isFalse();
+        assertThat(condition.forfilledBy(6L)).isFalse();
     }
 }

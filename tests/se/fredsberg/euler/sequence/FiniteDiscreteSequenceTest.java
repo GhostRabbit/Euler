@@ -6,13 +6,13 @@ import java.util.NoSuchElementException;
 
 import org.testng.annotations.Test;
 
-import se.fredsberg.euler.sequence.FiniteIntegerSequence;
+import se.fredsberg.euler.sequence.FiniteDiscreteSequence;
 
-public class FiniteIntegerSequenceTest {
+public class FiniteDiscreteSequenceTest {
 
     @Test
     public void next() {
-        FiniteIntegerSequence sequence = new FiniteIntegerSequence(2);
+        FiniteDiscreteSequence sequence = new FiniteDiscreteSequence(2);
         assertThat(sequence.hasNext()).isEqualTo(true);
         assertThat(sequence.next()).isEqualTo(1);
         assertThat(sequence.hasNext()).isEqualTo(true);
@@ -22,7 +22,7 @@ public class FiniteIntegerSequenceTest {
 
     @Test(expectedExceptions = NoSuchElementException.class)
     public void loopPastLimit() {
-        FiniteIntegerSequence sequence = new FiniteIntegerSequence(2);
+        FiniteDiscreteSequence sequence = new FiniteDiscreteSequence(2);
         sequence.next();
         sequence.next();
         sequence.next();

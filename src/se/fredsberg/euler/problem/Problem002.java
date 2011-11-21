@@ -24,10 +24,10 @@ public class Problem002 implements Problem {
 
     @Override
     public long solve() {
-        Sequence<Integer> fibonaccies = new FibonacciSequence();
-        Series<Integer> sumOfEvens = new ConditionedSeries<Integer>(new EvenCondition(), new SumSeries());
-        Condition<Integer> lessThen4million = new LessThenCondition(4000000);
-        new InfiniteSeriesCalculator<Integer>(fibonaccies, lessThen4million, sumOfEvens).calculateSeries();
+        Sequence<Long> fibonaccies = new FibonacciSequence();
+        Series<Long> sumOfEvens = new ConditionedSeries<Long>(new EvenCondition(), new SumSeries());
+        Condition<Long> lessThen4million = new LessThenCondition(4000000);
+        new InfiniteSeriesCalculator<Long>(fibonaccies, lessThen4million, sumOfEvens).calculateSeries();
         return sumOfEvens.getResult();
     }
 }

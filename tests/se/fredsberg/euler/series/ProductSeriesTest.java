@@ -17,11 +17,11 @@ public class ProductSeriesTest {
     @Test
     public void multiplySomeNumbers() {
         ProductSeries processor = new ProductSeries();
-        processor.process(1);
+        processor.process(1L);
         assertThat(processor.getResult()).isEqualTo(1);
-        processor.process(2);
+        processor.process(2L);
         assertThat(processor.getResult()).isEqualTo(2);
-        processor.process(-3);
+        processor.process(-3L);
         assertThat(processor.getResult()).isEqualTo(-6);
     }
 

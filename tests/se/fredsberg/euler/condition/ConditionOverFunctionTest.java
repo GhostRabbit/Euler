@@ -16,11 +16,11 @@ public class ConditionOverFunctionTest {
     
     @Test
     public void testCreation() {
-        Function<Integer> function = new Square();
-        Condition<Integer> condition = new LessThenCondition(5);
-        Condition<Integer> conditionOverFunction = new ConditionOverFunction<Integer>(condition, function);
-        assertThat(conditionOverFunction.forfilledBy(2)).isTrue();
-        assertThat(conditionOverFunction.forfilledBy(3)).isFalse();
+        Function<Long> function = new Square();
+        Condition<Long> condition = new LessThenCondition(5);
+        Condition<Long> conditionOverFunction = new ConditionOverFunction<Long>(condition, function);
+        assertThat(conditionOverFunction.forfilledBy(2L)).isTrue();
+        assertThat(conditionOverFunction.forfilledBy(3L)).isFalse();
     }
     
 }

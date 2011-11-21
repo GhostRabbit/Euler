@@ -18,16 +18,16 @@ public class SumOverFunctionSeriesTest {
 
     @Test
     public void processAFew() {
-        SumOverFunctionSeries series = new SumOverFunctionSeries(new Function<Integer>() {
+        SumOverFunctionSeries series = new SumOverFunctionSeries(new Function<Long>() {
             
             @Override
-            public Integer calculate(Integer t) {
+            public Long calculate(Long t) {
                 return t * 2;
             }
         });
-        series.process(2);
+        series.process(2L);
         assertThat(series.getResult()).isEqualTo(4);
-        series.process(5);
+        series.process(5L);
         assertThat(series.getResult()).isEqualTo(14);
     }
     

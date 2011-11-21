@@ -1,16 +1,16 @@
 package se.fredsberg.euler.series;
 
-public class ProductSeries implements Series<Integer> {
+public class ProductSeries implements Series<Long> {
 
-    Integer product = 1;
+    Long product = 1L;
 
     @Override
-    public void process(Integer i) {
+    public void process(Long i) {
         product *= i;
     }
 
     @Override
-    public Integer getResult() {
+    public Long getResult() {
         return product;
     }
     

@@ -1,9 +1,9 @@
 package se.fredsberg.euler.condition;
 
-public class EvenCondition implements Condition<Integer> {
+public class EvenCondition implements Condition<Long> {
 
     @Override
-    public boolean forfilledBy(Integer i) {
+    public boolean forfilledBy(Long i) {
         return i % 2 == 0;
     }
 }

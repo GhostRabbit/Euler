@@ -1,7 +1,7 @@
 package se.fredsberg.euler.problem;
 
 import se.fredsberg.euler.function.Square;
-import se.fredsberg.euler.sequence.FiniteIntegerSequence;
+import se.fredsberg.euler.sequence.FiniteDiscreteSequence;
 import se.fredsberg.euler.series.Series;
 import se.fredsberg.euler.series.SumOverFunctionSeries;
 import se.fredsberg.euler.series.SumSeries;
@@ -38,12 +38,12 @@ public class Problem006 implements Problem {
         return sum * sum;
     }
 
-    private long calculateSeries(Series<Integer> series) {
-        new FiniteSequenceCalculator<Integer>(first100Numbers(), series).calculateSeries();
+    private long calculateSeries(Series<Long> series) {
+        new FiniteSequenceCalculator<Long>(first100Numbers(), series).calculateSeries();
         return series.getResult();
     }
 
-    private FiniteIntegerSequence first100Numbers() {
-        return new FiniteIntegerSequence(100);
+    private FiniteDiscreteSequence first100Numbers() {
+        return new FiniteDiscreteSequence(100);
     }
 }

@@ -5,17 +5,17 @@ import se.fredsberg.euler.sequence.Sequence;
 
 public class SearchSequenceForMatch {
 
-    private final Condition<Integer> condition;
-    private final Sequence<Integer> sequence;
+    private final Condition<Long> condition;
+    private final Sequence<Long> sequence;
 
-    public SearchSequenceForMatch(Sequence<Integer> sequence, Condition<Integer> condition) {
-        this.condition = condition;
+    public SearchSequenceForMatch(Sequence<Long> sequence, Condition<Long> condition) {
         this.sequence = sequence;
+        this.condition = condition;
     }
 
-    public Integer finds() {
+    public Long finds() {
         while (true) {
-            Integer x = sequence.next();
+            Long x = sequence.next();
             if (condition.forfilledBy(x)) {
                 return x;
             }

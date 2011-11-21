@@ -1,15 +1,15 @@
 package se.fredsberg.euler.condition;
 
-public class LessThenCondition implements Condition<Integer> {
+public class LessThenCondition implements Condition<Long> {
 
-    private final int limit;
+    private final long limit;
 
     public LessThenCondition(int limit) {
         this.limit = limit;
     }
 
     @Override
-    public boolean forfilledBy(Integer x) {
+    public boolean forfilledBy(Long x) {
         return x < limit;
     }
 

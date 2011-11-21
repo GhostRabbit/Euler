@@ -10,13 +10,13 @@ public class DivisorCountTest {
     @Test
     public void testAFewValues() {
         DivisorCount function = new DivisorCount();
-        assertThat(function.calculate(1)).isEqualTo(1);
-        assertThat(function.calculate(3)).isEqualTo(2);
-        assertThat(function.calculate(6)).isEqualTo(4);
-        assertThat(function.calculate(10)).isEqualTo(4);
-        assertThat(function.calculate(15)).isEqualTo(4);
-        assertThat(function.calculate(21)).isEqualTo(4);
-        assertThat(function.calculate(28)).isEqualTo(6);
+        assertThat(function.calculate(1L)).isEqualTo(1);
+        assertThat(function.calculate(3L)).isEqualTo(2);
+        assertThat(function.calculate(6L)).isEqualTo(4);
+        assertThat(function.calculate(10L)).isEqualTo(4);
+        assertThat(function.calculate(15L)).isEqualTo(4);
+        assertThat(function.calculate(21L)).isEqualTo(4);
+        assertThat(function.calculate(28L)).isEqualTo(6);
     }
     
 }

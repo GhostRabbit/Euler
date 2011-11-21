@@ -1,15 +1,15 @@
 package se.fredsberg.euler.condition;
 
-public class EvenDivisorCondition implements Condition<Integer> {
+public class EvenDivisorCondition implements Condition<Long> {
 
-    private final int divisor;
+    private final long divisor;
 
-    public EvenDivisorCondition(int divisor) {
+    public EvenDivisorCondition(long divisor) {
         this.divisor = divisor;
     }
 
     @Override
-    public boolean forfilledBy(Integer i) {
+    public boolean forfilledBy(Long i) {
         return i % divisor == 0;
     }
 

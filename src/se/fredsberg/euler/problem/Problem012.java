@@ -42,10 +42,10 @@ public class Problem012 implements Problem {
         return new SearchSequenceForMatch(new TriangleNumberSequence(), atLeast550Divisors()).finds();
     }
 
-    private Condition<Integer> atLeast550Divisors() {
-        Function<Integer> divisorCount = new DivisorCount();
-        Condition<Integer> atLeast500 = new MoreThenCondition(500);
-        Condition<Integer> atLeast500Divisors = new ConditionOverFunction<Integer>(atLeast500, divisorCount);
+    private Condition<Long> atLeast550Divisors() {
+        Function<Long> divisorCount = new DivisorCount();
+        Condition<Long> atLeast500 = new MoreThenCondition(500);
+        Condition<Long> atLeast500Divisors = new ConditionOverFunction<Long>(atLeast500, divisorCount);
         return atLeast500Divisors;
     } 
  }

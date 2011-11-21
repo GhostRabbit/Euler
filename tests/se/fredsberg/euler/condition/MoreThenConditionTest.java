@@ -12,10 +12,10 @@ public class MoreThenConditionTest {
     @Test
     public void limitShouldBeStrict() {
         MoreThenCondition condition = new MoreThenCondition(5);
-        assertThat(condition.forfilledBy(3)).isFalse();
-        assertThat(condition.forfilledBy(4)).isFalse();
-        assertThat(condition.forfilledBy(5)).isFalse();
-        assertThat(condition.forfilledBy(6)).isTrue();
+        assertThat(condition.forfilledBy(3L)).isFalse();
+        assertThat(condition.forfilledBy(4L)).isFalse();
+        assertThat(condition.forfilledBy(5L)).isFalse();
+        assertThat(condition.forfilledBy(6L)).isTrue();
     }
 
 }
