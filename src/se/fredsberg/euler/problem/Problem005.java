@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import se.fredsberg.euler.sequence.ListSequence;
-import se.fredsberg.euler.series.ProductProcessor;
+import se.fredsberg.euler.series.ProductSeries;
 import se.fredsberg.euler.series.Series;
 import se.fredsberg.euler.util.FiniteSequenceCalculator;
 import se.fredsberg.euler.util.PrimeFactors;
@@ -23,9 +23,9 @@ public class Problem005 implements Problem {
     @Override
     public long solve() {
         List<Integer> primeFactors = getPrimeFactorsUpTo(20);
-        Series<Integer> series = new ProductProcessor();
+        Series<Integer> series = new ProductSeries();
         FiniteSequenceCalculator<Integer> looper2 = new FiniteSequenceCalculator<Integer>(new ListSequence<Integer>(primeFactors), series);
-        looper2.run();
+        looper2.calculateSeries();
         // Answer = 2 * 2 * 2 * 2 * 3 * 3 * 5 * 7 * 11 * 13 * 17 * 19
         return series.getResult();
     }

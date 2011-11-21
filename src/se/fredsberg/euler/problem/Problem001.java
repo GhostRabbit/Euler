@@ -4,7 +4,6 @@ import se.fredsberg.euler.condition.AnyCondition;
 import se.fredsberg.euler.condition.Condition;
 import se.fredsberg.euler.condition.EvenDivisorCondition;
 import se.fredsberg.euler.sequence.FiniteIntegerSequence;
-import se.fredsberg.euler.sequence.FiniteSequence;
 import se.fredsberg.euler.series.ConditionedSeries;
 import se.fredsberg.euler.series.Series;
 import se.fredsberg.euler.series.SumSeries;
@@ -22,9 +21,12 @@ public class Problem001 implements Problem {
     @Override
     public long solve() {
         Series<Integer> sumOfMultiples = createSeriesOfMultiples();
-        FiniteSequence<Integer> naturalNumbers = new FiniteIntegerSequence(999);
-        new FiniteSequenceCalculator<Integer>(naturalNumbers, sumOfMultiples).run();
+        new FiniteSequenceCalculator<Integer>(numbersBelow1000(), sumOfMultiples).calculateSeries();
         return sumOfMultiples.getResult();
+    }
+
+    private FiniteIntegerSequence numbersBelow1000() {
+        return new FiniteIntegerSequence(999);
     }
 
     private Series<Integer> createSeriesOfMultiples() {

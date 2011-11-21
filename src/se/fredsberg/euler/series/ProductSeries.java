@@ -1,7 +1,6 @@
 package se.fredsberg.euler.series;
 
-
-public class ProductProcessor implements Series<Integer> {
+public class ProductSeries implements Series<Integer> {
 
     Integer product = 1;
 

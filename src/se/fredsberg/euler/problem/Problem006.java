@@ -39,7 +39,7 @@ public class Problem006 implements Problem {
     }
 
     private long calculateSeries(Series<Integer> series) {
-        new FiniteSequenceCalculator<Integer>(first100Numbers(), series).run();
+        new FiniteSequenceCalculator<Integer>(first100Numbers(), series).calculateSeries();
         return series.getResult();
     }
 

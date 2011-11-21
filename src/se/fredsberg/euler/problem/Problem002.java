@@ -8,7 +8,7 @@ import se.fredsberg.euler.sequence.Sequence;
 import se.fredsberg.euler.series.ConditionedSeries;
 import se.fredsberg.euler.series.Series;
 import se.fredsberg.euler.series.SumSeries;
-import se.fredsberg.euler.util.SeriesCalculator;
+import se.fredsberg.euler.util.InfiniteSeriesCalculator;
 
 public class Problem002 implements Problem {
     
@@ -27,7 +27,7 @@ public class Problem002 implements Problem {
         Sequence<Integer> fibonaccies = new FibonacciSequence();
         Series<Integer> sumOfEvens = new ConditionedSeries<Integer>(new EvenCondition(), new SumSeries());
         Condition<Integer> lessThen4million = new LessThenCondition(4000000);
-        new SeriesCalculator<Integer>(fibonaccies, lessThen4million, sumOfEvens).run();
+        new InfiniteSeriesCalculator<Integer>(fibonaccies, lessThen4million, sumOfEvens).calculateSeries();
         return sumOfEvens.getResult();
     }
 }

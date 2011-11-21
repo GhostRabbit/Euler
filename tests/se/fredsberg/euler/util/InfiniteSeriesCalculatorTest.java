@@ -11,9 +11,9 @@ import org.testng.annotations.Test;
 import se.fredsberg.euler.condition.Condition;
 import se.fredsberg.euler.sequence.Sequence;
 import se.fredsberg.euler.series.Series;
-import se.fredsberg.euler.util.SeriesCalculator;
+import se.fredsberg.euler.util.InfiniteSeriesCalculator;
 
-public class SeriesCalculatorTest {
+public class InfiniteSeriesCalculatorTest {
 
     @Mock
     Sequence<Integer> sequence;
@@ -21,18 +21,18 @@ public class SeriesCalculatorTest {
     Series<Integer> series;
     @Mock
     Condition<Integer> condition;
-    private SeriesCalculator<Integer> calculator;
+    private InfiniteSeriesCalculator<Integer> calculator;
 
     @BeforeMethod
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        calculator = new SeriesCalculator<Integer>(sequence, condition, series);
+        calculator = new InfiniteSeriesCalculator<Integer>(sequence, condition, series);
     }
 
     @Test
     public void noLoops() {
         when(condition.forfilledBy(anyInt())).thenReturn(false);
-        calculator.run();
+        calculator.calculateSeries();
         verify(sequence).next();
         verify(condition).forfilledBy(anyInt());
         verifyNoMoreInteractions(series);
@@ -41,7 +41,7 @@ public class SeriesCalculatorTest {
     @Test
     public void twoLoops() {
         when(condition.forfilledBy(anyInt())).thenReturn(true).thenReturn(true).thenReturn(false);
-        calculator.run();
+        calculator.calculateSeries();
         verify(sequence, times(3)).next();
         verify(condition, times(3)).forfilledBy(anyInt());
         verify(series, times(2)).process(anyInt());

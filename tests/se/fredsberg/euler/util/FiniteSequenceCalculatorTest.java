@@ -29,7 +29,7 @@ public class FiniteSequenceCalculatorTest {
     @Test
     public void noLoops() {
         when(sequence.hasNext()).thenReturn(false);
-        calculator.run();
+        calculator.calculateSeries();
         verify(sequence).hasNext();
         verifyNoMoreInteractions(series);
     }
@@ -37,7 +37,7 @@ public class FiniteSequenceCalculatorTest {
     @Test
     public void twoLoops() {
         when(sequence.hasNext()).thenReturn(true).thenReturn(true).thenReturn(false);
-        calculator.run();
+        calculator.calculateSeries();
         verify(sequence, times(3)).hasNext();
         verify(sequence, times(2)).next();
         verify(series, times(2)).process(anyInt());

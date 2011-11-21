@@ -18,7 +18,7 @@ public class Problem004 implements Problem {
     @Override
     public long solve() {
         ConditionedSeries<Integer> largestPalindoneFinder = largestPalindoneFinder();
-        new FiniteSequenceCalculator<Integer>(new ProductSequence(100, 999), largestPalindoneFinder).run();
+        new FiniteSequenceCalculator<Integer>(new ProductSequence(100, 999), largestPalindoneFinder).calculateSeries();
         return largestPalindoneFinder.getResult();
     }
     

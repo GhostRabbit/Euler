@@ -4,19 +4,19 @@ import static org.fest.assertions.Assertions.*;
 
 import org.testng.annotations.Test;
 
-import se.fredsberg.euler.series.ProductProcessor;
+import se.fredsberg.euler.series.ProductSeries;
 
-public class ProductProcessorTest {
+public class ProductSeriesTest {
 
     @Test
     public void newlyCreated() {
-        ProductProcessor processor = new ProductProcessor();
+        ProductSeries processor = new ProductSeries();
         assertThat(processor.getResult()).isEqualTo(1);
     }
 
     @Test
     public void multiplySomeNumbers() {
-        ProductProcessor processor = new ProductProcessor();
+        ProductSeries processor = new ProductSeries();
         processor.process(1);
         assertThat(processor.getResult()).isEqualTo(1);
         processor.process(2);

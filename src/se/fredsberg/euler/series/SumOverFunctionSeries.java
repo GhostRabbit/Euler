@@ -5,7 +5,7 @@ import se.fredsberg.euler.function.Function;
 
 public class SumOverFunctionSeries implements Series<Integer> {
 
-    Integer sum = 0;
+    protected Integer sum = 0;
     private final Function<Integer> function;
     
     public SumOverFunctionSeries(Function<Integer> function) {
