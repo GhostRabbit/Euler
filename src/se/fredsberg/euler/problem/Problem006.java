@@ -2,11 +2,10 @@ package se.fredsberg.euler.problem;
 
 import se.fredsberg.euler.function.Square;
 import se.fredsberg.euler.sequence.FiniteIntegerSequence;
-import se.fredsberg.euler.sequence.FiniteSequence;
 import se.fredsberg.euler.series.Series;
 import se.fredsberg.euler.series.SumOverFunctionSeries;
 import se.fredsberg.euler.series.SumSeries;
-import se.fredsberg.euler.util.FiniteSeriesCalculator;
+import se.fredsberg.euler.util.FiniteSequenceCalculator;
 
 
 public class Problem006 implements Problem {
@@ -27,29 +26,24 @@ public class Problem006 implements Problem {
     
     @Override
     public long solve() {
-        int x = 100;
-        long a = sumOfSquares(1, x);
-        long b = squareOfSum(1, x);
-        return b - a;
+        return Math.abs(sumOfSquares() - squareOfSum());
     }
     
-    long sumOfSquares(int from, int to) {
-        FiniteSequence<Integer> generator = new FiniteIntegerSequence(from, to);
-        Series<Integer> series = new SumOverFunctionSeries(new Square());
-        FiniteSeriesCalculator<Integer> looper = new FiniteSeriesCalculator<Integer>(generator, series);
-        looper.run();
+    private long sumOfSquares() {
+        return calculateSeries(new SumOverFunctionSeries(new Square()));
+    }
+
+    private long squareOfSum() {
+        long sum = calculateSeries(new SumSeries());
+        return sum * sum;
+    }
+
+    private long calculateSeries(Series<Integer> series) {
+        new FiniteSequenceCalculator<Integer>(first100Numbers(), series).run();
         return series.getResult();
     }
 
-    long squareOfSum(int from, int to) {
-        long sum = sumOf(from, to);
-        return sum * sum;
-    }
-    
-    private long sumOf(int from, int to) {
-        FiniteSequence<Integer> generator = new FiniteIntegerSequence(from, to);
-        Series<Integer> series = new SumSeries();
-        new FiniteSeriesCalculator<Integer>(generator, series).run();
-        return series.getResult();
+    private FiniteIntegerSequence first100Numbers() {
+        return new FiniteIntegerSequence(100);
     }
 }

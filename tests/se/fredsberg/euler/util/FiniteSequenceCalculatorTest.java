@@ -10,20 +10,20 @@ import org.testng.annotations.Test;
 
 import se.fredsberg.euler.sequence.FiniteSequence;
 import se.fredsberg.euler.series.Series;
-import se.fredsberg.euler.util.FiniteSeriesCalculator;
+import se.fredsberg.euler.util.FiniteSequenceCalculator;
 
-public class FiniteSeriesCalculatorTest {
+public class FiniteSequenceCalculatorTest {
 
     @Mock
     FiniteSequence<Integer> sequence;
     @Mock
     Series<Integer> series;
-    private FiniteSeriesCalculator<Integer> calculator;
+    private FiniteSequenceCalculator<Integer> calculator;
 
     @BeforeMethod
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        calculator = new FiniteSeriesCalculator<Integer>(sequence, series);
+        calculator = new FiniteSequenceCalculator<Integer>(sequence, series);
     }
 
     @Test

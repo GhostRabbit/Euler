@@ -8,7 +8,7 @@ import se.fredsberg.euler.sequence.FiniteSequence;
 import se.fredsberg.euler.series.ConditionedSeries;
 import se.fredsberg.euler.series.Series;
 import se.fredsberg.euler.series.SumSeries;
-import se.fredsberg.euler.util.FiniteSeriesCalculator;
+import se.fredsberg.euler.util.FiniteSequenceCalculator;
 
 public class Problem001 implements Problem {
 
@@ -22,8 +22,8 @@ public class Problem001 implements Problem {
     @Override
     public long solve() {
         Series<Integer> sumOfMultiples = createSeriesOfMultiples();
-        FiniteSequence<Integer> naturalNumbers = new FiniteIntegerSequence(1, 999);
-        new FiniteSeriesCalculator<Integer>(naturalNumbers, sumOfMultiples).run();
+        FiniteSequence<Integer> naturalNumbers = new FiniteIntegerSequence(999);
+        new FiniteSequenceCalculator<Integer>(naturalNumbers, sumOfMultiples).run();
         return sumOfMultiples.getResult();
     }
 

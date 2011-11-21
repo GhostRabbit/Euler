@@ -4,7 +4,7 @@ import se.fredsberg.euler.condition.PalindromeCondition;
 import se.fredsberg.euler.sequence.ProductSequence;
 import se.fredsberg.euler.series.ConditionedSeries;
 import se.fredsberg.euler.series.MaxValueFoundInSequence;
-import se.fredsberg.euler.util.FiniteSeriesCalculator;
+import se.fredsberg.euler.util.FiniteSequenceCalculator;
 
 public class Problem004 implements Problem {
 
@@ -18,7 +18,7 @@ public class Problem004 implements Problem {
     @Override
     public long solve() {
         ConditionedSeries<Integer> largestPalindoneFinder = largestPalindoneFinder();
-        new FiniteSeriesCalculator<Integer>(new ProductSequence(100, 999), largestPalindoneFinder).run();
+        new FiniteSequenceCalculator<Integer>(new ProductSequence(100, 999), largestPalindoneFinder).run();
         return largestPalindoneFinder.getResult();
     }
     

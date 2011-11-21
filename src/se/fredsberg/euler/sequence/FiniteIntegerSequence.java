@@ -7,14 +7,11 @@ public class FiniteIntegerSequence implements FiniteSequence<Integer> {
     private int current;
     private final int upperInclusive;
 
-    public FiniteIntegerSequence(int start, int upperInclusiveLimit) {
-        if (start > upperInclusiveLimit) {
-            throw new IllegalArgumentException();
-        }
-        this.current = start;
+    public FiniteIntegerSequence(int upperInclusiveLimit) {
+        this.current = 1;
         this.upperInclusive = upperInclusiveLimit;
     }
-
+     
     @Override
     public Integer next() {
         if (!hasNext()) {
