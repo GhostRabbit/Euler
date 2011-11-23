@@ -1,16 +1,16 @@
 package se.fredsberg.euler.series;
 
-public class MaxValueFoundInSequence implements Series<Integer> {
+public class MaxValueFoundInSequence<T extends Number> implements Series<T> {
 
-    private int max = Integer.MIN_VALUE; 
+    private long max = Long.MIN_VALUE; 
     
     @Override
-    public void process(Integer x) {
-        max = Math.max(max, x);
+    public void process(T x) {
+        max = Math.max(max, x.longValue());
     }
 
     @Override
-    public Integer getResult() {
+    public Long getResult() {
         return max;
     }
 

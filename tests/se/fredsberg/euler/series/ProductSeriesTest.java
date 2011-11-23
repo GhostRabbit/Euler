@@ -10,13 +10,13 @@ public class ProductSeriesTest {
 
     @Test
     public void newlyCreated() {
-        ProductSeries processor = new ProductSeries();
+        ProductSeries<?> processor = new ProductSeries<Integer>();
         assertThat(processor.getResult()).isEqualTo(1);
     }
 
     @Test
     public void multiplySomeNumbers() {
-        ProductSeries processor = new ProductSeries();
+        ProductSeries<Long> processor = new ProductSeries<Long>();
         processor.process(1L);
         assertThat(processor.getResult()).isEqualTo(1);
         processor.process(2L);

@@ -4,7 +4,7 @@ import se.fredsberg.euler.condition.Condition;
 import se.fredsberg.euler.sequence.Sequence;
 import se.fredsberg.euler.series.Series;
 
-public class InfiniteSeriesCalculator<T> implements SeriesCalculator {
+public class InfiniteSeriesCalculator<T extends Number> implements SeriesCalculator {
 
     private final Sequence<T> sequence;
     private final Series<T> series;

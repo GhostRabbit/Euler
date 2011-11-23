@@ -1,9 +1,9 @@
 package se.fredsberg.euler.condition;
 
-public class PalindromeCondition implements Condition<Integer> {
+public class PalindromeCondition<T extends Number> implements Condition<T> {
     
     @Override
-    public boolean forfilledBy(Integer i) {
+    public boolean forfilledBy(T i) {
         String string = i.toString();
         String reverseString = new StringBuffer(string).reverse().toString();
         return string.equals(reverseString);

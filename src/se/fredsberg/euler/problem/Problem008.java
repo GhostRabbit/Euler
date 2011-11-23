@@ -1,9 +1,13 @@
-package se.fredsberg.euler;
+package se.fredsberg.euler.problem;
 
-import java.util.LinkedList;
-import java.util.List;
+import se.fredsberg.euler.function.FunctionOfSequence;
+import se.fredsberg.euler.function.ProductOverSequenceFunction;
+import se.fredsberg.euler.sequence.IntFromStringSequence;
+import se.fredsberg.euler.sequence.MovingSequence;
+import se.fredsberg.euler.series.MaxValueFoundInSequence;
+import se.fredsberg.euler.series.Series;
 
-public class E008 {
+public class Problem008 implements Problem {
 
     /**
      * Find the greatest product of five consecutive digits in the 1000-digit
@@ -42,44 +46,22 @@ public class E008 {
             + "07198403850962455444362981230987879927244284909188" + "84580156166097919133875499200524063689912560717606"
             + "05886116467109405077541002256983155200055935729725" + "71636269561882670428252483600823257530420752963450";
 
-    public static void main(String[] args) {
-        E008 e008 = new E008();
-        List<Integer> data = e008.string2int(DATA);
-        List<List<Integer>> combinations = e008.createCombinations(data, 5);
-        System.out.println(e008.findGreatestProduct(combinations));
+    @Override
+    public long solve() {
+        MaxValueFoundInSequence<Long> maxValueFound = new MaxValueFoundInSequence<Long>();
+        calculateResult(maxValueFound, constructSequencesOf5());
+        return maxValueFound.getResult();
     }
 
-    public int findGreatestProduct(List<List<Integer>> combinations) {
-        int max = Integer.MIN_VALUE;
-        for (List<Integer> sublist : combinations) {
-            int product = product(sublist);
-            max = Math.max(max, product);
-        }
-        return max;
+    private MovingSequence<Integer> constructSequencesOf5() {
+        return new MovingSequence<Integer>(new IntFromStringSequence(DATA), 5);
     }
 
-    private int product(List<Integer> sublist) {
-        int sum = 1;
-        for (int x : sublist) {
-            sum *= x;
+    private <T extends Number> void calculateResult(Series<Long> maxValueFound, MovingSequence<T> sequenceFactory) {
+        FunctionOfSequence<T> function = new ProductOverSequenceFunction<T>();
+        while (sequenceFactory.hasNext()) {
+            maxValueFound.process(function.calculate(sequenceFactory.next()));
         }
-        return sum;
     }
 
-    public List<List<Integer>> createCombinations(List<Integer> data, int length) {
-        List<List<Integer>> result = new LinkedList<List<Integer>>();
-        int lastindex = data.size() - length + 1;
-        for (int i = 0; i < lastindex; i++) {
-            result.add(data.subList(i, i + length));
-        }
-        return result;
-    }
-
-    public List<Integer> string2int(String string) {
-        List<Integer> data = new LinkedList<Integer>();
-        for (byte b : string.getBytes()) {
-            data.add(b - '0');
-        }
-        return data;
-    }
 }

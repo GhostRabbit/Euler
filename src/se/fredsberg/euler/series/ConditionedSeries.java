@@ -2,7 +2,7 @@ package se.fredsberg.euler.series;
 
 import se.fredsberg.euler.condition.Condition;
 
-public class ConditionedSeries<T> implements Series<T> {
+public class ConditionedSeries<T extends Number> implements Series<T> {
 
     private final Series<T> series;
     private final Condition<T> condition;
@@ -20,7 +20,7 @@ public class ConditionedSeries<T> implements Series<T> {
     }
 
     @Override
-    public T getResult() {
+    public Long getResult() {
         return series.getResult();
     }
 

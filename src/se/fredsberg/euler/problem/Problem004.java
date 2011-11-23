@@ -23,8 +23,8 @@ public class Problem004 implements Problem {
     }
     
     private static ConditionedSeries<Integer> largestPalindoneFinder() {
-        MaxValueFoundInSequence largestPalindrome = new MaxValueFoundInSequence();
-        PalindromeCondition isPalindrome = new PalindromeCondition();
+        MaxValueFoundInSequence<Integer> largestPalindrome = new MaxValueFoundInSequence<Integer>();
+        PalindromeCondition<Integer> isPalindrome = new PalindromeCondition<Integer>();
         return new ConditionedSeries<Integer>(isPalindrome, largestPalindrome);
     }
 }

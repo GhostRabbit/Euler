@@ -1,7 +1,7 @@
 package se.fredsberg.euler.sequence;
 
-public interface FiniteSequence<T> extends Sequence<T> {
-    
-    boolean hasNext();
+import se.fredsberg.euler.util.Nextable;
+
+public interface FiniteSequence<T> extends Sequence<T>, Nextable {
     
 }

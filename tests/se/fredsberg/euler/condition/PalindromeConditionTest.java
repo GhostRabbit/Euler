@@ -10,7 +10,7 @@ public class PalindromeConditionTest {
 
     @Test
     public void matching() {
-        PalindromeCondition condition = new PalindromeCondition();
+        PalindromeCondition<Integer> condition = new PalindromeCondition<Integer>();
         assertThat(condition.forfilledBy(1001)).isTrue();
         assertThat(condition.forfilledBy(101201)).isFalse();
         assertThat(condition.forfilledBy(123321)).isTrue();

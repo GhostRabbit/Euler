@@ -24,7 +24,7 @@ public class Problem005 implements Problem {
     @Override
     public long solve() {
         List<Long> primeFactors = getAllPrimeFactorsUpTo(20);
-        Series<Long> series = new ProductSeries();
+        Series<Long> series = new ProductSeries<Long>();
         FiniteSequenceCalculator<Long> looper = new FiniteSequenceCalculator<Long>(new ListSequence<Long>(primeFactors), series);
         looper.calculateSeries();
         // Answer = 2 * 2 * 2 * 2 * 3 * 3 * 5 * 7 * 11 * 13 * 17 * 19

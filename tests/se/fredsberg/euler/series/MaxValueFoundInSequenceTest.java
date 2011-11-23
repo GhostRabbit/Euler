@@ -10,13 +10,13 @@ public class MaxValueFoundInSequenceTest {
 
     @Test
     public void extractMax() {
-        MaxValueFoundInSequence max = new MaxValueFoundInSequence();
-        assertThat(max.getResult()).isEqualTo(Integer.MIN_VALUE);
-        max.process(-5);
+        MaxValueFoundInSequence<Long> max = new MaxValueFoundInSequence<Long>();
+        assertThat(max.getResult()).isEqualTo(Long.MIN_VALUE);
+        max.process(-5L);
         assertThat(max.getResult()).isEqualTo(-5);
-        max.process(5);
+        max.process(5L);
         assertThat(max.getResult()).isEqualTo(5);
-        max.process(0);
+        max.process(0L);
         assertThat(max.getResult()).isEqualTo(5);
     }
 }

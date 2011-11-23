@@ -1,6 +1,6 @@
 package se.fredsberg.euler.series;
 
-public interface Series<T> {
+public interface Series<T extends Number> {
     void process(T arg);
-    T getResult();
+    Long getResult();
 }
