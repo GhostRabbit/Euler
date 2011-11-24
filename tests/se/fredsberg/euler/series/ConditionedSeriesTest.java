@@ -1,23 +1,21 @@
 package se.fredsberg.euler.series;
 
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
 import static org.mockito.Mockito.*;
 
+import org.junit.Before;
+import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import se.fredsberg.euler.condition.AlwaysMatcher;
 import se.fredsberg.euler.condition.NeverMatcher;
-import se.fredsberg.euler.series.ConditionedSeries;
-import se.fredsberg.euler.series.Series;
 
 public class ConditionedSeriesTest {
 
     @Mock
     Series<Integer> series;
 
-    @BeforeMethod
+    @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
     }

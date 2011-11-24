@@ -2,8 +2,7 @@ package se.fredsberg.euler.problem;
 
 import static org.fest.assertions.Assertions.*;
 
-import org.testng.annotations.Test;
-
+import org.junit.Test;
 
 public class Problem006Test {
 

@@ -2,9 +2,7 @@ package se.fredsberg.euler.series;
 
 import static org.fest.assertions.Assertions.*;
 
-import org.testng.annotations.Test;
-
-import se.fredsberg.euler.series.MaxValueFoundInSequence;
+import org.junit.Test;
 
 public class MaxValueFoundInSequenceTest {
 

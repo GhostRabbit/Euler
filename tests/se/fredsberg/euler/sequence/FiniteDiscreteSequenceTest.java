@@ -4,9 +4,7 @@ import static org.fest.assertions.Assertions.*;
 
 import java.util.NoSuchElementException;
 
-import org.testng.annotations.Test;
-
-import se.fredsberg.euler.sequence.FiniteDiscreteSequence;
+import org.junit.Test;
 
 public class FiniteDiscreteSequenceTest {
 
@@ -20,7 +18,7 @@ public class FiniteDiscreteSequenceTest {
         assertThat(sequence.hasNext()).isEqualTo(false);
     }
 
-    @Test(expectedExceptions = NoSuchElementException.class)
+    @Test(expected = NoSuchElementException.class)
     public void loopPastLimit() {
         FiniteDiscreteSequence sequence = new FiniteDiscreteSequence(2);
         sequence.next();

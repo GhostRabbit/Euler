@@ -2,8 +2,7 @@ package se.fredsberg.euler.sequence;
 
 import static org.fest.assertions.Assertions.*;
 
-import org.testng.annotations.Test;
-
+import org.junit.Test;
 
 public class MovingSequenceTest {
 
@@ -25,7 +24,7 @@ public class MovingSequenceTest {
     }
 
     @Test
-    public void complexSequenceOfTwo() { 
+    public void complexSequenceOfTwo() {
         FiniteDiscreteSequence source = new FiniteDiscreteSequence(3);
         MovingSequence<Long> sequences = new MovingSequence<Long>(source, 2);
         assertThat(sequences.hasNext()).isTrue();
@@ -35,7 +34,7 @@ public class MovingSequenceTest {
         assertThat(sequences.hasNext()).isFalse();
     }
 
-    private void assertSequenceContains(FiniteSequence<Long> sequence, long ... contents) {
+    private void assertSequenceContains(FiniteSequence<Long> sequence, long... contents) {
         for (long x : contents) {
             assertThat(sequence.hasNext()).isTrue();
             assertThat(sequence.next()).isEqualTo(x);

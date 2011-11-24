@@ -2,9 +2,7 @@ package se.fredsberg.euler.condition;
 
 import static org.fest.assertions.Assertions.*;
 
-import org.testng.annotations.Test;
-
-import se.fredsberg.euler.condition.LessThenCondition;
+import org.junit.Test;
 
 public class LessThenConditionTest {
 

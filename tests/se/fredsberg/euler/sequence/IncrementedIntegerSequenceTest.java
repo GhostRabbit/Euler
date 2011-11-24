@@ -2,10 +2,7 @@ package se.fredsberg.euler.sequence;
 
 import static org.fest.assertions.Assertions.*;
 
-import org.testng.annotations.Test;
-
-import se.fredsberg.euler.sequence.IncrementedIntegerSequence;
-
+import org.junit.Test;
 
 public class IncrementedIntegerSequenceTest {
 
@@ -16,5 +13,5 @@ public class IncrementedIntegerSequenceTest {
         assertThat(sequence.next()).isEqualTo(6);
         assertThat(sequence.next()).isEqualTo(9);
     }
-    
+
 }

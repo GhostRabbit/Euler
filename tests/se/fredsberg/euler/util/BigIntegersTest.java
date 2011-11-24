@@ -4,9 +4,7 @@ import static org.fest.assertions.Assertions.*;
 
 import java.math.BigInteger;
 
-import org.testng.annotations.Test;
-
-import se.fredsberg.euler.util.BigIntegers;
+import org.junit.Test;
 
 public class BigIntegersTest {
 

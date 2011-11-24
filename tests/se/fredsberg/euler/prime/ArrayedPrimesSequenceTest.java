@@ -2,9 +2,8 @@ package se.fredsberg.euler.prime;
 
 import static org.fest.assertions.Assertions.*;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
-import se.fredsberg.euler.prime.ArrayedPrimesSequence;
 import se.fredsberg.euler.sequence.Sequence;
 
 public class ArrayedPrimesSequenceTest {

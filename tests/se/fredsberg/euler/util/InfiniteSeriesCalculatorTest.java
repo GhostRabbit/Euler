@@ -3,15 +3,14 @@ package se.fredsberg.euler.util;
 import static org.mockito.Matchers.*;
 import static org.mockito.Mockito.*;
 
+import org.junit.Before;
+import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
 import se.fredsberg.euler.condition.Condition;
 import se.fredsberg.euler.sequence.Sequence;
 import se.fredsberg.euler.series.Series;
-import se.fredsberg.euler.util.InfiniteSeriesCalculator;
 
 public class InfiniteSeriesCalculatorTest {
 
@@ -23,7 +22,7 @@ public class InfiniteSeriesCalculatorTest {
     Condition<Integer> condition;
     private InfiniteSeriesCalculator<Integer> calculator;
 
-    @BeforeMethod
+    @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         calculator = new InfiniteSeriesCalculator<Integer>(sequence, condition, series);

@@ -4,9 +4,7 @@ import static org.fest.assertions.Assertions.*;
 
 import java.util.Arrays;
 
-import org.testng.annotations.Test;
-
-import se.fredsberg.euler.condition.ListSumCondition;
+import org.junit.Test;
 
 public class ListSumConditionTest {
 

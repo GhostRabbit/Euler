@@ -2,9 +2,7 @@ package se.fredsberg.euler.sequence;
 
 import static org.fest.assertions.Assertions.*;
 
-import org.testng.annotations.Test;
-
-import se.fredsberg.euler.sequence.DiscreteSequence;
+import org.junit.Test;
 
 public class DiscreteSequenceTest {
 

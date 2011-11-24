@@ -2,7 +2,7 @@ package se.fredsberg.euler.sequence;
 
 import static org.fest.assertions.Assertions.*;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 public class PrimeFactorSequenceTest {
 

@@ -2,8 +2,7 @@ package se.fredsberg.euler.function;
 
 import static org.fest.assertions.Assertions.*;
 
-import org.testng.annotations.Test;
-
+import org.junit.Test;
 
 public class DivisorCountTest {
 
@@ -18,5 +17,5 @@ public class DivisorCountTest {
         assertThat(function.calculate(21L)).isEqualTo(4);
         assertThat(function.calculate(28L)).isEqualTo(6);
     }
-    
+
 }

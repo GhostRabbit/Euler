@@ -2,9 +2,7 @@ package se.fredsberg.euler.series;
 
 import static org.fest.assertions.Assertions.*;
 
-import org.testng.annotations.Test;
-
-import se.fredsberg.euler.series.SumSeries;
+import org.junit.Test;
 
 public class SumSeriesTest {
 
@@ -24,5 +22,4 @@ public class SumSeriesTest {
         summerizer.process(-3L);
         assertThat(summerizer.getResult()).isEqualTo(0);
     }
-
 }

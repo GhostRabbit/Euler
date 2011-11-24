@@ -2,16 +2,14 @@ package se.fredsberg.euler.condition;
 
 import static org.fest.assertions.Assertions.*;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
-import se.fredsberg.euler.condition.EvenCondition;
+import org.junit.Before;
+import org.junit.Test;
 
 public class EvenConditionTest {
 
     private EvenCondition condition;
 
-    @BeforeMethod
+    @Before
     public void setUp() {
         condition = new EvenCondition();
     }

@@ -7,8 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import org.testng.annotations.Test;
-
+import org.junit.Test;
 
 public class ListSequenceTest {
 
@@ -19,7 +18,7 @@ public class ListSequenceTest {
         assertThat(sequence.hasNext()).isFalse();
     }
 
-    @Test(expectedExceptions = NoSuchElementException.class)
+    @Test(expected = NoSuchElementException.class)
     public void endOverrun() {
         List<Integer> list = Collections.emptyList();
         ListSequence<Integer> sequence = new ListSequence<Integer>(list);
@@ -28,7 +27,7 @@ public class ListSequenceTest {
 
     @Test
     public void twoValues() {
-        List<Integer> list = Arrays.asList(new Integer[] {3, 7});
+        List<Integer> list = Arrays.asList(new Integer[] { 3, 7 });
         ListSequence<Integer> sequence = new ListSequence<Integer>(list);
         assertThat(sequence.hasNext()).isTrue();
         assertThat(sequence.next()).isEqualTo(3);
@@ -36,5 +35,5 @@ public class ListSequenceTest {
         assertThat(sequence.next()).isEqualTo(7);
         assertThat(sequence.hasNext()).isFalse();
     }
-    
+
 }

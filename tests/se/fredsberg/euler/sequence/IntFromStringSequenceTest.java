@@ -4,7 +4,7 @@ import static org.fest.assertions.Assertions.*;
 
 import java.util.NoSuchElementException;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 public class IntFromStringSequenceTest {
 
@@ -24,7 +24,7 @@ public class IntFromStringSequenceTest {
         assertThat(sequence.hasNext()).isFalse();
     }
 
-    @Test(expectedExceptions=NoSuchElementException.class)
+    @Test(expected = NoSuchElementException.class)
     public void nextWhenFinsihedShouldThrowException() {
         IntFromStringSequence sequence = new IntFromStringSequence("");
         sequence.next();

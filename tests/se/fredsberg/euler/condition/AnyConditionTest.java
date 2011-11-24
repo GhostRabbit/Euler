@@ -2,16 +2,14 @@ package se.fredsberg.euler.condition;
 
 import static org.fest.assertions.Assertions.*;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
-import se.fredsberg.euler.condition.AnyCondition;
+import org.junit.Before;
+import org.junit.Test;
 
 public class AnyConditionTest {
 
     private AnyCondition<Integer> condition;
 
-    @BeforeMethod
+    @Before
     public void setup() {
         condition = new AnyCondition<Integer>();
     }

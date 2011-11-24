@@ -2,9 +2,7 @@ package se.fredsberg.euler.sequence;
 
 import static org.fest.assertions.Assertions.*;
 
-import org.testng.annotations.Test;
-
-import se.fredsberg.euler.sequence.FibonacciSequence;
+import org.junit.Test;
 
 public class FibonacciSequenceTest {
 

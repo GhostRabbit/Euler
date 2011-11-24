@@ -1,8 +1,8 @@
 package se.fredsberg.euler.function;
 
-import org.testng.annotations.Test;
 import static org.fest.assertions.Assertions.*;
 
+import org.junit.Test;
 
 public class SquareTest {
 

@@ -3,14 +3,13 @@ package se.fredsberg.euler.util;
 import static org.mockito.Matchers.*;
 import static org.mockito.Mockito.*;
 
+import org.junit.Before;
+import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
 import se.fredsberg.euler.sequence.FiniteSequence;
 import se.fredsberg.euler.series.Series;
-import se.fredsberg.euler.util.FiniteSequenceCalculator;
 
 public class FiniteSequenceCalculatorTest {
 
@@ -20,7 +19,7 @@ public class FiniteSequenceCalculatorTest {
     Series<Integer> series;
     private FiniteSequenceCalculator<Integer> calculator;
 
-    @BeforeMethod
+    @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         calculator = new FiniteSequenceCalculator<Integer>(sequence, series);
