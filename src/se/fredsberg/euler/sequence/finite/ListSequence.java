@@ -1,7 +1,8 @@
-package se.fredsberg.euler.sequence;
+package se.fredsberg.euler.sequence.finite;
 
 import java.util.Iterator;
 import java.util.List;
+
 
 public class ListSequence<T> implements FiniteSequence<T> {
 

@@ -1,4 +1,4 @@
-package se.fredsberg.euler.sequence;
+package se.fredsberg.euler.sequence.finite;
 
 import java.util.NoSuchElementException;
 

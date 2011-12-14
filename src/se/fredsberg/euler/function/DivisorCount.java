@@ -1,7 +1,7 @@
 package se.fredsberg.euler.function;
 
-import se.fredsberg.euler.sequence.FiniteSequence;
-import se.fredsberg.euler.sequence.PrimeFactorSequence;
+import se.fredsberg.euler.sequence.finite.FiniteSequence;
+import se.fredsberg.euler.sequence.finite.PrimeFactorSequence;
 
 public class DivisorCount implements Function<Long> {
 

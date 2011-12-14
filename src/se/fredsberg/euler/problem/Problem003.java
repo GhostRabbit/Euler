@@ -1,7 +1,7 @@
 package se.fredsberg.euler.problem;
 
-import se.fredsberg.euler.sequence.FiniteSequence;
-import se.fredsberg.euler.sequence.PrimeFactorSequence;
+import se.fredsberg.euler.sequence.finite.FiniteSequence;
+import se.fredsberg.euler.sequence.finite.PrimeFactorSequence;
 
 public class Problem003 implements Problem {
     

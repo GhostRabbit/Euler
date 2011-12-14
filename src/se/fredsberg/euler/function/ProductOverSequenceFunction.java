@@ -1,6 +1,6 @@
 package se.fredsberg.euler.function;
 
-import se.fredsberg.euler.sequence.FiniteSequence;
+import se.fredsberg.euler.sequence.finite.FiniteSequence;
 import se.fredsberg.euler.series.ProductSeries;
 import se.fredsberg.euler.util.FiniteSequenceCalculator;
 

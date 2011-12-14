@@ -1,7 +1,7 @@
 package se.fredsberg.euler.problem;
 
 import se.fredsberg.euler.condition.PalindromeCondition;
-import se.fredsberg.euler.sequence.ProductSequence;
+import se.fredsberg.euler.sequence.finite.ProductSequence;
 import se.fredsberg.euler.series.ConditionedSeries;
 import se.fredsberg.euler.series.MaxValueFoundInSequence;
 import se.fredsberg.euler.util.FiniteSequenceCalculator;

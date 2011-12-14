@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import se.fredsberg.euler.sequence.FiniteSequence;
+import se.fredsberg.euler.sequence.finite.FiniteSequence;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ProductOverSequenceFunctionTest {

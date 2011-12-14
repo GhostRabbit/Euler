@@ -1,4 +1,4 @@
-package se.fredsberg.euler.sequence;
+package se.fredsberg.euler.sequence.finite;
 
 import static org.fest.assertions.Assertions.*;
 
@@ -6,6 +6,10 @@ import java.util.NoSuchElementException;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import se.fredsberg.euler.sequence.Sequence;
+
+import se.fredsberg.euler.sequence.finite.ClosedSequence;
 
 public class ClosedSequenceTest {
 

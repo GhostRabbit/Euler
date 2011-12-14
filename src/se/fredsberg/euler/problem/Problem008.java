@@ -2,8 +2,8 @@ package se.fredsberg.euler.problem;
 
 import se.fredsberg.euler.function.FunctionOfSequence;
 import se.fredsberg.euler.function.ProductOverSequenceFunction;
-import se.fredsberg.euler.sequence.IntFromStringSequence;
-import se.fredsberg.euler.sequence.MovingSequence;
+import se.fredsberg.euler.sequence.finite.IntFromStringSequence;
+import se.fredsberg.euler.sequence.finite.MovingSequence;
 import se.fredsberg.euler.series.MaxValueFoundInSequence;
 import se.fredsberg.euler.series.Series;
 

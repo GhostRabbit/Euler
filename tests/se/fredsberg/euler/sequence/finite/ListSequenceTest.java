@@ -1,4 +1,4 @@
-package se.fredsberg.euler.sequence;
+package se.fredsberg.euler.sequence.finite;
 
 import static org.fest.assertions.Assertions.*;
 
@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.junit.Test;
+
+import se.fredsberg.euler.sequence.finite.ListSequence;
 
 public class ListSequenceTest {
 

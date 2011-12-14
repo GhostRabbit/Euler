@@ -1,6 +1,7 @@
-package se.fredsberg.euler.sequence;
+package se.fredsberg.euler.sequence.finite;
 
 import java.util.NoSuchElementException;
+
 
 public class ProductSequence implements FiniteSequence<Integer> {
 

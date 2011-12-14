@@ -4,9 +4,9 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import se.fredsberg.euler.sequence.FiniteSequence;
-import se.fredsberg.euler.sequence.ListSequence;
-import se.fredsberg.euler.sequence.PrimeFactorSequence;
+import se.fredsberg.euler.sequence.finite.FiniteSequence;
+import se.fredsberg.euler.sequence.finite.ListSequence;
+import se.fredsberg.euler.sequence.finite.PrimeFactorSequence;
 import se.fredsberg.euler.series.ProductSeries;
 import se.fredsberg.euler.series.Series;
 import se.fredsberg.euler.util.FiniteSequenceCalculator;

@@ -1,9 +1,9 @@
 package se.fredsberg.euler.problem;
 
 import se.fredsberg.euler.function.Square;
-import se.fredsberg.euler.sequence.ClosedSequence;
 import se.fredsberg.euler.sequence.DiscreteSequence;
-import se.fredsberg.euler.sequence.FiniteSequence;
+import se.fredsberg.euler.sequence.finite.ClosedSequence;
+import se.fredsberg.euler.sequence.finite.FiniteSequence;
 import se.fredsberg.euler.series.Series;
 import se.fredsberg.euler.series.SumOverFunctionSeries;
 import se.fredsberg.euler.series.SumSeries;

@@ -1,6 +1,8 @@
-package se.fredsberg.euler.sequence;
+package se.fredsberg.euler.sequence.finite;
 
 import java.util.NoSuchElementException;
+
+import se.fredsberg.euler.sequence.Sequence;
 
 public class ClosedSequence<T> implements FiniteSequence<T> {
 

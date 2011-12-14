@@ -1,8 +1,10 @@
-package se.fredsberg.euler.sequence;
+package se.fredsberg.euler.sequence.finite;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
+import se.fredsberg.euler.sequence.Sequence;
 
 public class MovingSequence<T> implements FiniteSequence<Sequence<T>> {
 

@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import se.fredsberg.euler.sequence.FiniteSequence;
+import se.fredsberg.euler.sequence.finite.FiniteSequence;
 import se.fredsberg.euler.series.Series;
 
 public class FiniteSequenceCalculatorTest {

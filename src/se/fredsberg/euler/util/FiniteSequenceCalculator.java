@@ -1,6 +1,6 @@
 package se.fredsberg.euler.util;
 
-import se.fredsberg.euler.sequence.FiniteSequence;
+import se.fredsberg.euler.sequence.finite.FiniteSequence;
 import se.fredsberg.euler.series.Series;
 
 public class FiniteSequenceCalculator<T extends Number> implements SeriesCalculator {
