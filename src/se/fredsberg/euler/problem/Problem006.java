@@ -1,7 +1,9 @@
 package se.fredsberg.euler.problem;
 
 import se.fredsberg.euler.function.Square;
-import se.fredsberg.euler.sequence.FiniteDiscreteSequence;
+import se.fredsberg.euler.sequence.ClosedSequence;
+import se.fredsberg.euler.sequence.DiscreteSequence;
+import se.fredsberg.euler.sequence.FiniteSequence;
 import se.fredsberg.euler.series.Series;
 import se.fredsberg.euler.series.SumOverFunctionSeries;
 import se.fredsberg.euler.series.SumSeries;
@@ -23,12 +25,12 @@ public class Problem006 implements Problem {
      * Find the difference between the sum of the squares of the first one
      * hundred natural numbers and the square of the sum.
      */
-    
+
     @Override
     public long solve() {
         return Math.abs(sumOfSquares() - squareOfSum());
     }
-    
+
     private long sumOfSquares() {
         return calculateSeries(new SumOverFunctionSeries(new Square()));
     }
@@ -43,7 +45,7 @@ public class Problem006 implements Problem {
         return series.getResult();
     }
 
-    private FiniteDiscreteSequence first100Numbers() {
-        return new FiniteDiscreteSequence(100);
+    private FiniteSequence<Long> first100Numbers() {
+        return new ClosedSequence<Long>(100 + 1, new DiscreteSequence());
     }
 }

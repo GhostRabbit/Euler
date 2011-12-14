@@ -3,7 +3,9 @@ package se.fredsberg.euler.problem;
 import se.fredsberg.euler.condition.AnyCondition;
 import se.fredsberg.euler.condition.Condition;
 import se.fredsberg.euler.condition.EvenDivisorCondition;
-import se.fredsberg.euler.sequence.FiniteDiscreteSequence;
+import se.fredsberg.euler.sequence.ClosedSequence;
+import se.fredsberg.euler.sequence.DiscreteSequence;
+import se.fredsberg.euler.sequence.FiniteSequence;
 import se.fredsberg.euler.series.ConditionedSeries;
 import se.fredsberg.euler.series.Series;
 import se.fredsberg.euler.series.SumSeries;
@@ -25,8 +27,8 @@ public class Problem001 implements Problem {
         return sumOfMultiples.getResult();
     }
 
-    private FiniteDiscreteSequence numbersBelow1000() {
-        return new FiniteDiscreteSequence(999);
+    private FiniteSequence<Long> numbersBelow1000() {
+        return new ClosedSequence<Long>(1000, new DiscreteSequence());
     }
 
     private Series<Long> createSeriesOfMultiples() {

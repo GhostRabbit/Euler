@@ -8,29 +8,30 @@ public class MovingSequenceTest {
 
     @Test
     public void emptySequence() {
-        MovingSequence<Long> sequence = new MovingSequence<Long>(new FiniteDiscreteSequence(0), 1);
+        FiniteSequence<Long> source = new ClosedSequence<Long>(0, null);
+        MovingSequence<Long> sequence = new MovingSequence<Long>(source, 1);
         assertThat(sequence.hasNext()).isFalse();
     }
 
     @Test
     public void simpleSequenceOfOne() {
-        FiniteDiscreteSequence source = new FiniteDiscreteSequence(2);
+        FiniteSequence<Long> source = new ClosedSequence<Long>(2, new DiscreteSequence());
         MovingSequence<Long> sequences = new MovingSequence<Long>(source, 1);
         assertThat(sequences.hasNext()).isTrue();
-        assertSequenceContains(sequences.next(), 1);
+        assertSequenceContains(sequences.next(), 0);
         assertThat(sequences.hasNext()).isTrue();
-        assertSequenceContains(sequences.next(), 2);
+        assertSequenceContains(sequences.next(), 1);
         assertThat(sequences.hasNext()).isFalse();
     }
 
     @Test
     public void complexSequenceOfTwo() {
-        FiniteDiscreteSequence source = new FiniteDiscreteSequence(3);
+        FiniteSequence<Long> source = new ClosedSequence<Long>(3, new DiscreteSequence());
         MovingSequence<Long> sequences = new MovingSequence<Long>(source, 2);
         assertThat(sequences.hasNext()).isTrue();
-        assertSequenceContains(sequences.next(), 1, 2);
+        assertSequenceContains(sequences.next(), 0, 1);
         assertThat(sequences.hasNext()).isTrue();
-        assertSequenceContains(sequences.next(), 2, 3);
+        assertSequenceContains(sequences.next(), 1, 2);
         assertThat(sequences.hasNext()).isFalse();
     }
 

@@ -7,7 +7,7 @@ public class DivisorCount implements Function<Long> {
 
     @Override
     public Long calculate(Long x) {
-        FiniteSequence<Long> sequence = new PrimeFactorSequence(x); 
+        FiniteSequence<Long> sequence = new PrimeFactorSequence(x);
         int count = 0;
         long totalCount = 1;
         long lastFactor = 0;

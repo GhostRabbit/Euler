@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import se.fredsberg.euler.util.Nextable;
-
-public class MovingSequence<T> implements Nextable {
+public class MovingSequence<T> implements FiniteSequence<Sequence<T>> {
 
     private final FiniteSequence<T> source;
     private final int length;
@@ -15,10 +13,10 @@ public class MovingSequence<T> implements Nextable {
     public MovingSequence(FiniteSequence<T> sequence, int length) {
         this.source = sequence;
         this.length = length;
-        fillFirst();
+        firstFill();
     }
 
-    private void fillFirst() {
+    private void firstFill() {
         for (int i = 0; i < length; i++) {
             if (!source.hasNext()) {
                 sequence = null;
@@ -33,7 +31,7 @@ public class MovingSequence<T> implements Nextable {
         return sequence != null;
     }
 
-    public FiniteSequence<T> next() {
+    public FiniteSequence<T> next() { 
         List<T> toReturn = new ArrayList<T>(sequence);
         updateSequence();
         return new ListSequence<T>(toReturn);
