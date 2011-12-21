@@ -13,7 +13,7 @@ public class BigIntegers {
         return sum;
     }
 
-    public static BigInteger factor(int f) {
+    public static BigInteger factorial(int f) {
         BigInteger sum = BigInteger.ONE;
         for (int i = 1; i <= f; i++) {
             sum = sum.multiply(BigInteger.valueOf(i));

@@ -1,10 +1,10 @@
-package se.fredsberg.euler;
+package se.fredsberg.euler.problem;
 
 import java.math.BigInteger;
 
 import se.fredsberg.euler.util.BigIntegers;
 
-public class E020 {
+public class Problem020 implements Problem {
 
     /**
      * n! means n * (n - 1) * ... * 3 * 2 * 1
@@ -14,9 +14,11 @@ public class E020 {
      * 
      * Find the sum of the digits in the number 100!
      */
-    
-    public static void main(String[] args) {
-        BigInteger sum = BigIntegers.factor(100);
-        System.out.println(BigIntegers.sumDigits(sum));
+
+    @Override
+    public long solve() {
+        BigInteger sum = BigIntegers.factorial(100);
+        return BigIntegers.sumDigits(sum);
     }
+
 }

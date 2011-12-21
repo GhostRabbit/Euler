@@ -14,8 +14,8 @@ public class BigIntegersTest {
     }
 
     @Test
-    public void factor() {
-        assertThat(BigIntegers.factor(1)).isEqualTo(new BigInteger("1"));
-        assertThat(BigIntegers.factor(3)).isEqualTo(new BigInteger("6"));
+    public void factorial() {
+        assertThat(BigIntegers.factorial(1)).isEqualTo(new BigInteger("1"));
+        assertThat(BigIntegers.factorial(3)).isEqualTo(new BigInteger("6"));
     }
 }
