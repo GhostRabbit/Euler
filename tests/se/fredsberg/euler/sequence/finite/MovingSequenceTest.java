@@ -5,14 +5,11 @@ import static org.fest.assertions.Assertions.*;
 import org.junit.Test;
 
 import se.fredsberg.euler.sequence.DiscreteSequence;
-import se.fredsberg.euler.sequence.finite.ClosedSequence;
-import se.fredsberg.euler.sequence.finite.FiniteSequence;
-import se.fredsberg.euler.sequence.finite.MovingSequence;
 
 public class MovingSequenceTest {
 
     @Test
-    public void emptySequence() {
+    public void sequenceTooShortForFirstFill() {
         FiniteSequence<Long> source = new ClosedSequence<Long>(0, null);
         MovingSequence<Long> sequence = new MovingSequence<Long>(source, 1);
         assertThat(sequence.hasNext()).isFalse();

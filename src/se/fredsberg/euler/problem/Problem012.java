@@ -21,12 +21,12 @@ public class Problem012 implements Problem {
      * Let us list the factors of the first seven triangle numbers:
      * 
      * <pre>
-     * 1: 1 
-     * 3: 1,3 
-     * 6: 1,2,3,6 
-     * 10: 1,2,5,10 
-     * 15: 1,3,5,15 
-     * 21: 1,3,7,21 
+     * 1: 1
+     * 3: 1,3
+     * 6: 1,2,3,6
+     * 10: 1,2,5,10
+     * 15: 1,3,5,15
+     * 21: 1,3,7,21
      * 28: 1,2,4,7,14,28
      * </pre>
      * 
@@ -36,16 +36,16 @@ public class Problem012 implements Problem {
      * What is the value of the first triangle number to have over five hundred
      * divisors?
      */
-    
+
     @Override
     public long solve() {
         return new SearchSequenceForMatch(new TriangleNumberSequence(), atLeast550Divisors()).finds();
     }
 
     private Condition<Long> atLeast550Divisors() {
-        Function<Long> divisorCount = new DivisorCount();
+        Function<Long, Long> divisorCount = new DivisorCount();
         Condition<Long> atLeast500 = new MoreThenCondition(500);
         Condition<Long> atLeast500Divisors = new ConditionOverFunction<Long>(atLeast500, divisorCount);
         return atLeast500Divisors;
-    } 
- }
+    }
+}

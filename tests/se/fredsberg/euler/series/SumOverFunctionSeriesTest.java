@@ -16,11 +16,11 @@ public class SumOverFunctionSeriesTest {
 
     @Test
     public void processAFew() {
-        SumOverFunctionSeries series = new SumOverFunctionSeries(new Function<Long>() {
+        SumOverFunctionSeries series = new SumOverFunctionSeries(new Function<Long, Long>() {
 
             @Override
-            public Long calculate(Long t) {
-                return t * 2;
+            public Long calculate(Long x) {
+                return x * 2;
             }
         });
         series.process(2L);

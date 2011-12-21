@@ -5,13 +5,16 @@ import static org.fest.assertions.Assertions.*;
 import java.util.NoSuchElementException;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import se.fredsberg.euler.sequence.Sequence;
 
-import se.fredsberg.euler.sequence.finite.ClosedSequence;
-
 public class ClosedSequenceTest {
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     private final Object expected = new Object();
     private Sequence<Object> wrappedSequence;
@@ -41,8 +44,9 @@ public class ClosedSequenceTest {
         assertThat(sequence.hasNext()).isFalse();
     }
 
-    @Test(expected = NoSuchElementException.class)
+    @Test
     public void exceptionIfGoingPastLimit() {
+        thrown.expect(NoSuchElementException.class);
         ClosedSequence<Object> sequence = new ClosedSequence<Object>(0, wrappedSequence);
         sequence.next();
     }

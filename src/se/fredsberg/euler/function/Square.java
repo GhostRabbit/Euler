@@ -1,10 +1,10 @@
 package se.fredsberg.euler.function;
 
-public class Square implements Function<Long> {
+public class Square implements Function<Long, Long> {
 
     @Override
-    public Long calculate(Long t) {
-        return  t * t;
+    public Long calculate(Long x) {
+        return  x * x;
     }
 
 }

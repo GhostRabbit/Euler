@@ -5,12 +5,12 @@ import se.fredsberg.euler.function.Function;
 public class ConditionOverFunction<T> implements Condition<T> {
 
     private final Condition<T> condition;
-    private final Function<T> function;
+    private final Function<T, T> function;
 
-    public ConditionOverFunction(Condition<T> condition, Function<T> function) {
+    public ConditionOverFunction(Condition<T> condition, Function<T, T> function) {
         this.condition = condition;
         this.function = function;
-        
+
     }
 
     @Override

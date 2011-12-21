@@ -3,7 +3,7 @@ package se.fredsberg.euler.function;
 import se.fredsberg.euler.sequence.finite.FiniteSequence;
 import se.fredsberg.euler.sequence.finite.PrimeFactorSequence;
 
-public class DivisorCount implements Function<Long> {
+public class DivisorCount implements Function<Long, Long> {
 
     @Override
     public Long calculate(Long x) {

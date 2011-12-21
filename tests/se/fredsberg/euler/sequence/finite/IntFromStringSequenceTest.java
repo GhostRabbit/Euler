@@ -4,11 +4,14 @@ import static org.fest.assertions.Assertions.*;
 
 import java.util.NoSuchElementException;
 
+import org.junit.Rule;
 import org.junit.Test;
-
-import se.fredsberg.euler.sequence.finite.IntFromStringSequence;
+import org.junit.rules.ExpectedException;
 
 public class IntFromStringSequenceTest {
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     @Test
     public void emptySequence() {
@@ -26,8 +29,9 @@ public class IntFromStringSequenceTest {
         assertThat(sequence.hasNext()).isFalse();
     }
 
-    @Test(expected = NoSuchElementException.class)
+    @Test
     public void nextWhenFinsihedShouldThrowException() {
+        thrown.expect(NoSuchElementException.class);
         IntFromStringSequence sequence = new IntFromStringSequence("");
         sequence.next();
     }

@@ -1,6 +1,6 @@
 package se.fredsberg.euler.function;
 
-public interface Function<T> {
+public interface Function<Y, X> {
 
-    T calculate(T t);
+    Y calculate(X x);
 }

@@ -4,11 +4,14 @@ import static org.fest.assertions.Assertions.*;
 
 import java.util.NoSuchElementException;
 
+import org.junit.Rule;
 import org.junit.Test;
-
-import se.fredsberg.euler.sequence.finite.ProductSequence;
+import org.junit.rules.ExpectedException;
 
 public class ProductSequenceTest {
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     @Test
     public void next() {
@@ -21,15 +24,17 @@ public class ProductSequenceTest {
         assertThat(sequence.next()).isEqualTo(144);
     }
 
-    @Test(expected = NoSuchElementException.class)
+    @Test
     public void tooFar() {
+        thrown.expect(NoSuchElementException.class);
         ProductSequence sequence = new ProductSequence(10, 10);
         sequence.next();
         sequence.next();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void upperLowerThenLower() {
+        thrown.expect(IllegalArgumentException.class);
         new ProductSequence(10, 9);
     }
 

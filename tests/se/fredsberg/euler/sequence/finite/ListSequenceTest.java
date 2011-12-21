@@ -7,11 +7,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import org.junit.Rule;
 import org.junit.Test;
-
-import se.fredsberg.euler.sequence.finite.ListSequence;
+import org.junit.rules.ExpectedException;
 
 public class ListSequenceTest {
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     @Test
     public void emptyList() {
@@ -20,8 +23,9 @@ public class ListSequenceTest {
         assertThat(sequence.hasNext()).isFalse();
     }
 
-    @Test(expected = NoSuchElementException.class)
+    @Test
     public void endOverrun() {
+        thrown.expect(NoSuchElementException.class);
         List<Integer> list = Collections.emptyList();
         ListSequence<Integer> sequence = new ListSequence<Integer>(list);
         sequence.next();

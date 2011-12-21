@@ -11,7 +11,7 @@ public class ConditionOverFunctionTest {
 
     @Test
     public void testCreation() {
-        Function<Long> function = new Square();
+        Function<Long, Long> function = new Square();
         Condition<Long> condition = new LessThenCondition(5);
         Condition<Long> conditionOverFunction = new ConditionOverFunction<Long>(condition, function);
         assertThat(conditionOverFunction.forfilledBy(2L)).isTrue();

@@ -6,9 +6,9 @@ import se.fredsberg.euler.function.Function;
 public class SumOverFunctionSeries implements Series<Long> {
 
     protected Long sum = 0L;
-    private final Function<Long> function;
-    
-    public SumOverFunctionSeries(Function<Long> function) {
+    private final Function<Long, Long> function;
+
+    public SumOverFunctionSeries(Function<Long, Long> function) {
         this.function = function;
     }
 
@@ -21,5 +21,5 @@ public class SumOverFunctionSeries implements Series<Long> {
     public Long getResult() {
         return sum;
     }
-    
+
 }
