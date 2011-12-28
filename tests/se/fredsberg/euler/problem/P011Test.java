@@ -1,10 +1,10 @@
-package se.fredsberg.euler;
+package se.fredsberg.euler.problem;
 
 import static org.fest.assertions.Assertions.*;
 
 import org.junit.Test;
 
-public class E011Test {
+public class P011Test {
 
     int[][] DATA = new int[3][3];
 
