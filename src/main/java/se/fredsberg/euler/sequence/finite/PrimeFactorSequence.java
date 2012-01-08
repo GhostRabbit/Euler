@@ -2,9 +2,8 @@ package se.fredsberg.euler.sequence.finite;
 
 import java.util.NoSuchElementException;
 
-
 public class PrimeFactorSequence implements FiniteSequence<Long> {
-    
+
     private Long number;
     private long i;
 

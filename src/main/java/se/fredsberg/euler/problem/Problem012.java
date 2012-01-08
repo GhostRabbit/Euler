@@ -8,7 +8,6 @@ import se.fredsberg.euler.function.Function;
 import se.fredsberg.euler.sequence.TriangleNumberSequence;
 import se.fredsberg.euler.util.SearchSequenceForMatch;
 
-
 public class Problem012 implements Problem {
 
     /**
@@ -39,10 +38,12 @@ public class Problem012 implements Problem {
 
     @Override
     public long solve() {
-        return new SearchSequenceForMatch(new TriangleNumberSequence(), atLeast550Divisors()).finds();
+        SearchSequenceForMatch searchTriangelSequenceFor500DivisorsMatch = new SearchSequenceForMatch(new TriangleNumberSequence(),
+                atLeast500Divisors());
+        return searchTriangelSequenceFor500DivisorsMatch.finds();
     }
 
-    private Condition<Long> atLeast550Divisors() {
+    private Condition<Long> atLeast500Divisors() {
         Function<Long, Long> divisorCount = new DivisorCount();
         Condition<Long> atLeast500 = new MoreThenCondition(500);
         Condition<Long> atLeast500Divisors = new ConditionOverFunction<Long>(atLeast500, divisorCount);
